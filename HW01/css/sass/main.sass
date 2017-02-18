@@ -1,0 +1,87 @@
+@import "bootstrap"
+
+
+#report-form
+    border: solid black 1px
+    padding: 15px
+    max-width: 740px
+    margin: 50px auto
+
+    .rules
+        margin:
+            left: 8px
+            top: 30px
+
+    .container
+        max-width: 700px
+        margin-top: 20px
+        border: solid black 1px
+
+    h2, h3
+        font-weight: bold
+        text-align: center
+        width: 100%
+
+    h3
+        border-bottom: solid black 1px
+        background-color: #ccc
+        margin: 0
+        padding: 10px 15px
+        margin-left: -15px
+        width: calc(100% + 30px)
+        line-height: 1
+        font-size: 1em
+
+    .row.last
+        margin: 20px -15px
+
+
+    .form-field
+        padding: 5px
+        //border:
+            bottom: solid 1px black
+            right: solid 1px black
+
+        label
+            display: block
+            font:
+                size: .7em
+                weight: normal
+
+        input, select
+            width: 100%
+            padding: 5px
+            font-size: .8em
+
+        input:focus, textarea:focus
+            border: solid 2px white
+            -webkit-box-shadow: 0px 0px 25px -10px black
+            -moz-box-shadow: 0px 0px 25px -10px black
+            box-shadow: 0px 0px 25px -10px black
+
+        input[type='checkbox']
+            width: auto
+            float: left
+            transform: scale(2)
+            margin: 10px
+            &:hover
+                opacity: .8
+
+        span
+            float: left
+            display: block
+            width: 80%
+
+        textarea
+            width: 100%
+            height: 6em
+            resize: vertical
+
+        button
+            display: block
+            border: none
+            margin: 0 auto
+            width: 250px
+            padding: 10px 0
+            &:hover
+                opacity: .8

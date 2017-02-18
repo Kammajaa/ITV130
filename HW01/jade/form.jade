@@ -1,0 +1,167 @@
+doctype html
+html
+    head
+        title E-avaldus
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js")
+        link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css")
+        link(rel="stylesheet" href="css/main.css")
+
+
+    body
+        form#report-form
+            h2 Politseile avalduse
+            .rules 
+                |* - märgitud väljad on kohustuslikud<br>
+                |** - märgitud väljadest üks on kohustuslik (täida isikukood või sünniaeg)
+                
+            .container
+                h3.form-title TEATAJA
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                        
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        select
+                            option(default) -- valige kodakontsus --
+                            option Eesti
+                            option Soome
+                            option Läti
+                            option Leedu
+                .row
+                    .form-field.col-sm-12
+                        label Perekonnanimi*
+                        input(type="text") 
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text") 
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")     
+                .row
+                    .form-field.col-sm-12
+                        input(type="checkbox")
+                        span Kannatanu on juriidiline isik
+
+            .container
+                h3.form-title SÜNDMUSE TOIMUMISE AEG
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        input(type="text")
+
+            .container
+                h3.form-title SÜNDMUSE TOIMUMISE KOHT
+                .row
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        select
+                    .form-field.col-sm-6
+                        label Perekonnanimi*
+                        select
+
+                .row
+                    .form-field.col-sm-12
+                        label Perekonnanimi*
+                        input(type="text")
+                .row
+                    .form-field.col-sm-12
+                        label Perekonnanimi*
+                        input(type="text")
+
+            .container
+                h3.form-title TOIMUNU KIRJELDUS*
+                .row
+                    .form-field.col-sm-12
+                        textarea
+                .row
+                    .form-field.col-sm-12
+                        span Tekitatud varaline kahju: €
+                        input(type="text")
+
+            .container
+                h3.form-title ÄRA VÕETUD / VIIDUD / SAAMATA JÄÄNUD VARA
+                .row
+                    .form-field.col-sm-12
+                .row
+                    .form-field.col-sm-12
+                        button#add-stolen-item-btn Lisa vara
+                    
+            .container
+                h3.form-title SÜÜTEO TOIME PANNUD ISIKU(TE) ANDMED 
+                .row
+                    .form-field.col-sm-12
+                .row
+                    .form-field.col-sm-12
+                        button#add-culprit-btn Lisa süüdlane
+
+            .container
+                h3.form-title TUNNISTAJA(TE) ANDMED
+                .row
+                    .form-field.col-sm-12
+                .row
+                    .form-field.col-sm-12
+                        button#add-witness-btn Lisa tunnistaja
+                    
+
+            .container
+                h3.form-title TÄIENDAVAD ANDMED
+                .row.last
+                    .form-field.col-sm-12
+                        input(type="checkbox")
+                        span 
+                            |Olen nõus kokkuleppemenetlusega 
+                            |Kokkuleppemenetlus on menetluse liik, mille käigus nõustuvad süüdistatav 
+                            |ja tema kaitsja süüdistuse sisu ja kuriteo kvalifikatsiooni, kuriteoga tekitatud kahju laadi ja suurusega ning jõuavad kokkuleppele prokuröri poolt kohtus nõutava karistuse liigis ja määras
+                .row.last
+                    .form-field.col-sm-12
+                        input(type="checkbox")
+                        span Olen nõus, et menetlusega seotud dokumendid edastatakse minu poolt antud e-posti aadressile
+
+                .row.last
+                    .form-field.col-sm-12
+                        input(type="checkbox")
+                        span  Soovin teavet E-Toimiku kaudu <a href="https://www.e-toimik.ee">https://www.e-toimik.ee/</a>
+            
+            .container
+                .row.last
+                    .form-field.col-sm-6
+                        button Kinnita ja allkirjasta ID kaardiga
+                    .form-field.col-sm-6
+                        button Kinnita allkirjastamata
