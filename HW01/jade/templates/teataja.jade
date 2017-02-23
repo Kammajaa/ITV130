@@ -1,0 +1,66 @@
+.container
+    h3.form-title TEATAJA
+    .row
+        .form-field.col-sm-6
+            label Perekonnanimi*
+            input(type="text")
+        .form-field.col-sm-6
+            label Eesnimi*
+            input(type="text")
+    .row
+        .form-field.col-sm-6
+            label Isikukood**
+            input(type="text")
+        .form-field.col-sm-6
+            label Sünniaeg**
+            input(type="text")
+    .row
+        .form-field.col-sm-6
+            label Amet
+            input(type="text") 
+            
+        .form-field.col-sm-6
+            label Kodakondsus*
+            select
+                option(default) -- valige kodakontsus --
+                option Eesti
+                option Soome
+                option Läti
+                option Leedu
+    .row
+        .form-field.col-sm-12
+            label Elukoha aadress (tänav, maja nr, korter, linn)
+            input(type="text") 
+    .row
+        .form-field.col-sm-6
+            label Sihtnumber
+            input(type="text") 
+        .form-field.col-sm-6
+            label Perekonnanimi*
+            select
+                option(default) -- valige maakond --
+                option Harjumaa
+                option Läänemaa
+                option Ida-Virumaa
+                option Lääne-Virumaa
+    .row
+        .form-field.col-sm-6
+            label Sobiv viis kontakteerumiseks
+            select
+                option(default) -- valige kontakteerumise viis --
+                option Telefon
+                option E-post
+        .form-field.col-sm-6
+            label Sobiv aeg kontakteerumiseks
+            input(type="text") 
+    .row
+        .form-field.col-sm-6
+            label E-post
+            input(type="text") 
+        .form-field.col-sm-6
+            label Telefon*
+            input(type="text")     
+    .row
+        .form-field.col-sm-12
+            input(type="checkbox")
+            span Kannatanu on juriidiline isik
