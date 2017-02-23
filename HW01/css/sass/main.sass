@@ -1,6 +1,5 @@
 @import "bootstrap"
 
-
 #report-form
     border: solid black 1px
     padding: 15px
@@ -16,6 +15,9 @@
         max-width: 700px
         margin-top: 20px
         border: solid black 1px
+
+        &:last-child
+            border: none
 
     h2, h3
         font-weight: bold
@@ -35,7 +37,6 @@
     .row.last
         margin: 20px -15px
 
-
     .form-field
         padding: 5px
         //border:
@@ -48,10 +49,14 @@
                 size: .7em
                 weight: normal
 
-        input, select
+        input[type="text"], select
             width: 100%
             padding: 5px
             font-size: .8em
+
+            &.short
+                max-width: 90px
+                float: left
 
         input:focus, textarea:focus
             border: solid 2px white
@@ -60,17 +65,16 @@
             box-shadow: 0px 0px 25px -10px black
 
         input[type='checkbox']
-            width: auto
-            float: left
-            transform: scale(2)
-            margin: 10px
-            &:hover
-                opacity: .8
+            display: none
 
         span
             float: left
             display: block
-            width: 80%
+            width: 100%
+
+            &.short
+                width: auto
+                padding: 5px
 
         textarea
             width: 100%

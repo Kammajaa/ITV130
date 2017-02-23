@@ -24,22 +24,22 @@ html
                         label Perekonnanimi*
                         input(type="text")
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Eesnimi*
                         input(type="text")
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Isikukood**
                         input(type="text")
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Sünniaeg**
                         input(type="text")
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Amet
                         input(type="text") 
                         
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Kodakondsus*
                         select
                             option(default) -- valige kodakontsus --
                             option Eesti
@@ -48,28 +48,36 @@ html
                             option Leedu
                 .row
                     .form-field.col-sm-12
-                        label Perekonnanimi*
+                        label Elukoha aadress (tänav, maja nr, korter, linn)
                         input(type="text") 
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Sihtnumber
                         input(type="text") 
                     .form-field.col-sm-6
                         label Perekonnanimi*
+                        select
+                            option(default) -- valige maakond --
+                            option Harjumaa
+                            option Läänemaa
+                            option Ida-Virumaa
+                            option Lääne-Virumaa
+                .row
+                    .form-field.col-sm-6
+                        label Sobiv viis kontakteerumiseks
+                        select
+                            option(default) -- valige kontakteerumise viis --
+                            option Telefon
+                            option E-post
+                    .form-field.col-sm-6
+                        label Sobiv aeg kontakteerumiseks
                         input(type="text") 
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label E-post
                         input(type="text") 
                     .form-field.col-sm-6
-                        label Perekonnanimi*
-                        input(type="text") 
-                .row
-                    .form-field.col-sm-6
-                        label Perekonnanimi*
-                        input(type="text") 
-                    .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Telefon*
                         input(type="text")     
                 .row
                     .form-field.col-sm-12
@@ -80,29 +88,29 @@ html
                 h3.form-title SÜNDMUSE TOIMUMISE AEG
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Kuupäev
                         input(type="text")
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Kellaaeg
                         input(type="text")
 
             .container
                 h3.form-title SÜNDMUSE TOIMUMISE KOHT
                 .row
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Prefektuur
                         select
                     .form-field.col-sm-6
-                        label Perekonnanimi*
+                        label Riik
                         select
 
                 .row
                     .form-field.col-sm-12
-                        label Perekonnanimi*
+                        label Aadress
                         input(type="text")
                 .row
                     .form-field.col-sm-12
-                        label Perekonnanimi*
+                        label Toimumise koht (nt park, kauplus, internet vms)
                         input(type="text")
 
             .container
@@ -112,8 +120,8 @@ html
                         textarea
                 .row
                     .form-field.col-sm-12
-                        span Tekitatud varaline kahju: €
-                        input(type="text")
+                        span.short Tekitatud varaline kahju: €
+                        input.short(type="text")
 
             .container
                 h3.form-title ÄRA VÕETUD / VIIDUD / SAAMATA JÄÄNUD VARA
@@ -160,6 +168,10 @@ html
                         span  Soovin teavet E-Toimiku kaudu <a href="https://www.e-toimik.ee">https://www.e-toimik.ee/</a>
             
             .container
+                .row
+                    .form-field.col-sm-12
+                        input(type="checkbox")
+                        span Kõik esitatud andmed on õiged. Olen teadlik, et valeandmete esitamine on karistatav
                 .row.last
                     .form-field.col-sm-6
                         button Kinnita ja allkirjasta ID kaardiga
