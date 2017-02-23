@@ -2,6 +2,46 @@
     h3.form-title ÄRA VÕETUD / VIIDUD / SAAMATA JÄÄNUD VARA
     .row
         .form-field.col-sm-12
+            .sub-form
+                h4 Vara #1
+                a.close-btn(href="#") X
+                .row
+                    .sub-field.col-sm-8
+                        label Eseme nimetus
+                        input(type="text")
+                    .sub-field.col-sm-4
+                        input(type="checkbox")
+                        label Vara oli lukustatud ruumis
+                .row
+                    .sub-field.col-sm-8
+                        label Soetamise aasta
+                        input(type="text")
+                    .sub-field.col-sm-4
+                        label Ligikaudne hetkeväärtus
+                        input(type="text" placeholder="€")
+                .row
+                    .sub-field.col-sm-12 Vara valdus olemas (viimati kannatanul/teatajal ese/asi olemas)
+                .row
+                    .sub-field.col-sm-6
+                        label Kuupäev
+                        input(type="text")
+                    .sub-field.col-sm-6
+                        label Kellaaeg
+                        input(type="text")
+                .row
+                    .sub-field.col-sm-12 Vara valdusest väljaminek on tuvastatud (polnud enam eset/asja teatajal/kannatanul olemas)
+                .row
+                    .sub-field.col-sm-6
+                        label Kuupäev
+                        input(type="text")
+                    .sub-field.col-sm-6
+                        label Kellaaeg
+                        input(type="text")
+                .row
+                    .sub-field.col-sm-12
+                        label Tundemärgid ja eritunnused (sh raaminumber, seerianumber, IMEI-kood jm)
+                        textarea
+                        
     .row
         .form-field.col-sm-12
             button#add-stolen-item-btn Lisa vara

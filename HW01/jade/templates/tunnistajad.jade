@@ -4,12 +4,39 @@
         .form-field.col-sm-12
             .sub-form
                 h4 Tunnistaja#1
+                a.close-btn(href="#") X
                 .row
                     .sub-field.col-sm-6
                         label Perekonnanimi
                         input(type="text")
                     .sub-field.col-sm-6
                         label Eesnimi
+                        input(type="text")
+                .row
+                    .sub-field.col-sm-6
+                        label Isikukood
+                        input(type="text")
+                    .sub-field.col-sm-6
+                        label Sünniaeg
+                        input(type="text")
+                .row
+                    .sub-field.col-sm-6
+                        label Amet
+                        input(type="text")
+                    .sub-field.col-sm-6
+                        label Kodakontsus
+                        select
+                            option(default) -- valige kodakontsus --
+                .row
+                    .sub-field.col-sm-12
+                        label Aadress
+                        input(type="text")
+                .row
+                    .sub-field.col-sm-6
+                        label E-post
+                        input(type="text")
+                    .sub-field.col-sm-6
+                        label Telefon
                         input(type="text")
                 
     .row
