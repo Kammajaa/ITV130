@@ -1,0 +1,39 @@
+.container
+    h3.form-title SÜNDMUSE
+    .row
+        .form-field.col-sm-6
+            label Riik*
+            select
+                option(default) Eesti
+                option Soome
+                option Läti
+                option Leedu
+                
+        .form-field.col-sm-6
+            label Maakond
+            select
+                option(default) -- valige maakond --
+                option Harjumaa
+                option Läänemaa
+                option Ida-Virumaa
+                option Lääne-Virumaa
+    .row
+        .form-field.col-sm-12
+            label Toimumise koht (nt aadress, park, kauplus, internet vms)*
+            input(type="text")
+    .row
+        .form-field.col-sm-6
+            label Kuupäev*
+            input(type="text")
+
+        .form-field.col-sm-6
+            label Kellaaeg
+            input(type="text")
+    .row
+        .form-field.col-sm-12
+            label Tominu kirjeldus*
+            textarea
+    .row
+        .form-field.col-sm-12
+            span.short Tekitatud varaline kahju: €
+            input.short(type="text")

@@ -1,0 +1,50 @@
+.container
+    h3.form-title ÄRA VÕETUD / VIIDUD / SAAMATA JÄÄNUD VARA
+    .row
+        #test.form-field.col-sm-12
+            #vara.sub-form(style="display: none;")
+                h4(onclick="testhide(Rvara_idR)") Vara #Rvara_idR
+                a.close-btn(href="javascript:clost(Rvara_idR)" ) X
+                #vara_content_Rvara_idR
+                    .row
+                        .sub-field.col-sm-8
+                            label Eseme nimetus
+                            input(type="text")
+                        .sub-field.col-sm-4
+                            include checkbox
+                            span.terms Vara oli lukustatud ruumis
+                    .row
+                        .sub-field.col-sm-8
+                            label Soetamise aasta
+                            input(type="text")
+                        .sub-field.col-sm-4
+                            label Ligikaudne hetkeväärtus
+                            input(type="text" placeholder="€")
+                    .row
+                        .sub-field.col-sm-12 Vara valdus olemas (viimati kannatanul/teatajal ese/asi olemas)
+                    .row
+                        .sub-field.col-sm-6
+                            label Kuupäev
+                            input(type="text")
+                        .sub-field.col-sm-6
+                            label Kellaaeg
+                            input(type="text")
+                    .row
+                        .sub-field.col-sm-12 Vara valdusest väljaminek on tuvastatud (polnud enam eset/asja teatajal/kannatanul olemas)
+                    .row
+                        .sub-field.col-sm-6
+                            label Kuupäev
+                            input(type="text")
+                        .sub-field.col-sm-6
+                            label Kellaaeg
+                            input(type="text")
+                    .row
+                        .sub-field.col-sm-12
+                            label Tundemärgid ja eritunnused (sh raaminumber, seerianumber, IMEI-kood jm)
+                            textarea
+
+    .row
+        .form-field.col-sm-12
+            button#add-stolen-item-btn(type="button") Lisa vara
+
+script(src='js/esemed.js')

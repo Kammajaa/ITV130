@@ -1,0 +1,45 @@
+doctype html
+html(lang="et")
+    include templates/head
+
+    body
+        .info Kui kellegi elu või tervis on vahetult ohus, siis helista viivitamatult hädaabinumbrile 112. Ära kasuta seda ankeeti raskest ja/või isikuvastasest kuriteost (vägistamine, tapmine, kehaline väärkohtlemine - löömine, peksmine vm) teatamiseks. Raskest kuriteost teada andmiseks pöördu lähimasse politseijaoskonda.<br/>
+            |Võimalusel allkirjasta vorm digitaalselt. Nii on kindel, kes selle esitas.<br/>
+            |Tähelepanu! Palun kontrolli, et sisestasid enda e-posti aadressi vormile korrektselt. Kui e-posti aadress on ôige, siis peaksid süüteoteate koopia päeva jooksul sisestatud e-posti aadressile saama, mis tähendab, et avaldus on politseini jõudnud. Kui seda ei juhtu, siis palun võta ühendust aadressil ppa@politsei.ee.<br/>
+            |Avalduses ei tohi esitada valeandmeid.<br/>
+            |Vajadusel tuleb menetleja kutsel tulla politseijaoskonda täiendavate ütluste andmiseks.
+            
+        form#report-form
+            h2 Politseile avalduse
+            .rules 
+                |* - märgitud väljad on kohustuslikud<br>
+                |** - märgitud väljadest üks on kohustuslik (täida isikukood või sünniaeg)
+                
+            include templates/teataja
+            
+            include templates/toimumine
+
+            include templates/esemed
+                    
+            include templates/syydlased
+
+            include templates/tunnistajad
+
+            include templates/taiendavad_andmed
+            
+            hr.hidden-sm.hidden-md.hidden-lg.hidden-xl
+            
+            .container
+                .row
+                    .form-field.col-sm-12
+                        include templates/checkbox
+                        span.terms.importand Kõik esitatud andmed on õiged. Olen teadlik, et valeandmete esitamine on karistatav
+                .row.last
+                    .form-field.col-sm-6
+                        button.big
+                            span Kinnita ja allkirjasta ID kaardiga
+                    .form-field.col-sm-6
+                        button.big
+                            span Kinnita allkirjastamata
+            include templates/dialog
+        script(src="js/main.js")

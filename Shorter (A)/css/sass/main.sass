@@ -1,0 +1,263 @@
+@import "bootstrap"
+
+$background-color: rgb(190, 212, 236)
+$text-color: rgb(143, 146, 154)
+$border-color: rgb(207, 207, 207)
+$checked-color: rgb(21, 47, 185)
+
+body
+    font: "Comic Sans MS", cursive, sans-serif
+
+    .info
+        padding: 15px
+        max-width: 740px
+        margin: 50px auto 0
+
+    #report-form
+        border: solid $border-color 1px
+        padding: 15px
+        max-width: 740px
+        margin: 50px auto
+
+        @media (max-width: $screen-sm)
+            border: none
+            border:
+                top: solid $border-color 1px
+                bottom: solid $border-color 1px
+            padding: 0
+
+        h2, h3
+            font-weight: bold
+            text-align: center
+            width: 100%
+
+        h3
+            border-bottom: solid $border-color 1px
+            background-color: $background-color
+            margin: 0
+            padding: 10px 15px
+            margin-left: -15px
+            width: calc(100% + 30px)
+            line-height: 1
+            font-size: 1em
+
+            @media (max-width: $screen-sm)
+                border: none
+
+        h4
+            width: 100%
+            background-color: $background-color
+            font-size: 1em
+            margin: 0 0
+            padding: 10px
+
+        label
+            display: block
+            font:
+                size: .7em
+                weight: normal
+
+        input[type="text"], select
+            width: 100%
+            padding: 5px
+            font-size: .8em
+
+            &.short
+                max-width: 90px
+                float: left
+                margin-top: -5px
+
+        hr
+            width: 90%
+            border: solid 1px $background-color
+
+        input:focus, textarea:focus
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(191, 191, 191, .8)
+            -moz-box-shadow: 0px 0px 5px 0px rgba(191, 191, 191, .8)
+            box-shadow: 0px 0px 5px 0px rgba(191, 191, 191, .8)
+
+        .checkbox
+            float: left
+            fill: $border-color
+            opacity: .8
+            cursor: pointer
+
+            &.checked
+                fill: $checked-color
+                opacity: 1
+
+            svg
+                cursor: pointer
+                width: 30px
+                height: 30px
+
+            &:hover
+                fill: $background-color
+                opacity: .7
+
+            input[type='checkbox']
+                cursor: pointer
+                transform: scale(1.8)
+                opacity: 0
+                margin:
+                    top: 8px
+                    left: -24px
+
+        textarea
+            width: 100%
+            height: 6em
+            resize: vertical
+
+        button
+            font:
+                weight: bold
+                size: 1.2em
+            display: block
+            border: none
+            margin: 0 auto
+            width: 250px
+            padding: 10px 0
+
+            &.big
+                width: 100%
+
+            &:hover
+                opacity: .9
+
+        .rules
+            margin:
+                left: 8px
+                top: 30px
+
+        .container
+            max-width: 700px
+            margin-top: 20px
+            border: solid $border-color 1px
+
+            @media (max-width: $screen-sm)
+                border: none
+
+            &:last-child
+                border: none
+
+        .row.last
+            margin: 0px -15px
+
+        .sub-form
+            border: solid $border-color 1px
+            margin: 10px auto
+            position: relative
+            max-height: 36px
+            overflow: hidden
+            transition: max-height 1s cubic-bezier(0.17, 0.04, 0.03, 0.94)
+
+            h4
+                cursor: pointer
+
+            &.display
+                max-height: 600px
+
+                h4
+                    cursor: auto
+
+            .close-btn
+                font-weight: bold
+                color: $text-color
+                padding: 3px 9px
+                text:
+                    decoration: none
+                    align: center
+                position: absolute
+                top: 3px
+                right: 3px
+                background-color: white
+                border: solid $border-color 1px
+                cursor: pointer
+
+                &:hover
+                    opacity: .8
+
+            .row
+                margin-left: 0
+                margin-right: 0
+
+            .sub-field
+                padding: 5px
+
+        .form-field
+            padding: 5px
+            //border:
+                bottom: solid 1px $border-color
+                right: solid 1px $border-color
+
+            span
+                float: left
+                display: block
+                width: 100%
+
+                &.terms
+                    width: 80%
+                    margin: 15px 10px
+
+                &.short
+                    width: auto
+                    padding: 5px
+
+                &.importand
+                    margin: 10px
+                    text-decoration: underline
+                    font:
+                        weight: bold
+                        size: 1.1em
+
+        .dialog
+            font-weight: bold
+            border: solid 1px rgb(238, 238, 238)
+            width: 300px
+            height: 200px
+            margin:
+                left: -150px
+                top: -100px
+            background: rgb(246, 246, 246)
+            position: fixed
+            top: 50%
+            left: 50%
+            padding: 10px
+
+            .close-btn
+                border: solid 1px $background-color
+                text:
+                    decoration: none
+                    align: center
+                font-size: 1.2em
+                padding: 2px 5px
+                color: $text-color
+                background-color: white
+                display: block
+                width: 29px
+                float: right
+
+                &:hover
+                    opacity: .5
+
+            span
+                clear: both
+                height: 100px
+                text-align: center
+                font-size: 1.2em
+                display: block
+                padding: 30px 2px 10px
+
+            .cancel
+                display: block
+                float: left
+                margin: 2px
+                width: calc(50% - 4px)
+                color: black
+                font-size: 1.2em
+
+                background-color: rgb(224, 108, 104)
+
+            .ok
+                @extend .cancel
+                background-color: rgb(143, 213, 132)
