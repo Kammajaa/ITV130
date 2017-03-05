@@ -1,0 +1,12 @@
+.dialog
+    h4 Kas kindel?
+    a.close-btn(href="#") X
+    span Olete kindel, et soovite kustutada?
+    button.cancel Loobu
+    button.ok Kustuta
+
+    script.
+        $(".dialog .close-btn").click(function(e) {
+            e.preventDefault();
+            $(this).parent().hide();
+        });

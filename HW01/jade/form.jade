@@ -26,14 +26,20 @@ html(lang="et")
             include templates/tunnistajad
 
             include templates/taiendavad_andmed
-
+            
+            hr.hidden-sm.hidden-md.hidden-lg.hidden-xl
+            
             .container
                 .row
                     .form-field.col-sm-12
                         include templates/checkbox
-                        span.terms Kõik esitatud andmed on õiged. Olen teadlik, et valeandmete esitamine on karistatav
+                        span.terms.importand Kõik esitatud andmed on õiged. Olen teadlik, et valeandmete esitamine on karistatav
                 .row.last
                     .form-field.col-sm-6
-                        button.big Kinnita ja allkirjasta ID kaardiga
+                        button.big
+                            span Kinnita ja allkirjasta ID kaardiga
                     .form-field.col-sm-6
-                        button.big Kinnita allkirjastamata
+                        button.big
+                            span Kinnita allkirjastamata
+            include templates/dialog
+        script(src="js/main.js")
