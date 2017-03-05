@@ -5866,7 +5866,8 @@ body {
       float: left;
       fill: #ebebeb;
       opacity: 0.8;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       body #report-form .checkbox.checked {
         fill: #5f5f5f;
         opacity: 1; }
@@ -5878,11 +5879,12 @@ body {
         fill: #bed4ec;
         opacity: 0.7; }
       body #report-form .checkbox input[type='checkbox'] {
+        position: absolute;
+        left: 30px;
+        top: 5px;
         cursor: pointer;
-        transform: scale(1.8);
-        opacity: 0;
-        margin-top: 8px;
-        margin-left: -24px; }
+        transform: scale(2.2);
+        opacity: 0; }
     body #report-form textarea {
       width: 100%;
       height: 6em;

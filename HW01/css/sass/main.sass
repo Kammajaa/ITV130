@@ -81,6 +81,7 @@ body
             fill: $border-color
             opacity: .8
             cursor: pointer
+            position: relative
 
             &.checked
                 fill: $checked-color
@@ -96,12 +97,12 @@ body
                 opacity: .7
 
             input[type='checkbox']
+                position: absolute
+                left: 30px
+                top: 5px
                 cursor: pointer
-                transform: scale(1.8)
+                transform: scale(2.2)
                 opacity: 0
-                margin:
-                    top: 8px
-                    left: -24px
 
         textarea
             width: 100%
