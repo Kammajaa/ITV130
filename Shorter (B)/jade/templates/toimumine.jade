@@ -1,36 +1,37 @@
 .container
-    h3.form-title SÜNDMUSE TOIMUMISE AEG
+    h3.form-title SÜNDMUSE
     .row
         .form-field.col-sm-6
-            label Kuupäev
+            label Riik*
+            select
+                option(default) Eesti
+                option Soome
+                option Läti
+                option Leedu
+                
+        .form-field.col-sm-6
+            label Maakond
+            select
+                option(default) -- valige maakond --
+                option Harjumaa
+                option Läänemaa
+                option Ida-Virumaa
+                option Lääne-Virumaa
+    .row
+        .form-field.col-sm-12
+            label Toimumise koht (nt aadress, park, kauplus, internet vms)*
             input(type="text")
+    .row
+        .form-field.col-sm-6
+            label Kuupäev*
+            input(type="text")
+
         .form-field.col-sm-6
             label Kellaaeg
             input(type="text")
-
-.container
-    h3.form-title SÜNDMUSE TOIMUMISE KOHT
-    .row
-        .form-field.col-sm-6
-            label Prefektuur
-            select
-        .form-field.col-sm-6
-            label Riik
-            select
-
     .row
         .form-field.col-sm-12
-            label Aadress
-            input(type="text")
-    .row
-        .form-field.col-sm-12
-            label Toimumise koht (nt park, kauplus, internet vms)
-            input(type="text")
-
-.container
-    h3.form-title TOIMUNU KIRJELDUS*
-    .row
-        .form-field.col-sm-12
+            label Tominu kirjeldus*
             textarea
     .row
         .form-field.col-sm-12
