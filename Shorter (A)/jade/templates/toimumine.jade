@@ -2,7 +2,14 @@
     h3.form-title SÜNDMUSE
     .row
         .form-field.col-sm-6
-            label Riik*
+            label Sündmuse kuupäev*
+            input(type="text")
+        .form-field.col-sm-6
+            label Sündmuse lellaaeg
+            input(type="text")
+    .row
+        .form-field.col-sm-6
+            label Sündmus toimus riigis*
             select
                 option(default) Eesti
                 option Soome
@@ -10,7 +17,7 @@
                 option Leedu
                 
         .form-field.col-sm-6
-            label Maakond
+            label Sündmus toimus maakonnas
             select
                 option(default) -- valige maakond --
                 option Harjumaa
@@ -19,21 +26,14 @@
                 option Lääne-Virumaa
     .row
         .form-field.col-sm-12
-            label Toimumise koht (nt aadress, park, kauplus, internet vms)*
-            input(type="text")
-    .row
-        .form-field.col-sm-6
-            label Kuupäev*
-            input(type="text")
-
-        .form-field.col-sm-6
-            label Kellaaeg
+            label Sündmuse koht (nt aadress, park, kauplus, internet vms)*
             input(type="text")
     .row
         .form-field.col-sm-12
-            label Tominu kirjeldus*
+            label Sündmuse kirjeldus*
             textarea
     .row
         .form-field.col-sm-12
             span.short Tekitatud varaline kahju:
-            input.short(type="text" placeholder="€")
+            input.short(type="text")
+            span.short €

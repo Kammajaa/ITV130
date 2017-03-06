@@ -14,9 +14,11 @@
                         .sub-field.col-sm-6
                             label Soetamise aasta
                             input(type="text")
-                        .sub-field.col-sm-6
+                        .sub-field.col-sm-5
                             label Ligikaudne hetkeväärtus
-                            input(type="text" placeholder="€")
+                            input(type="text")
+                        .sub-field.col-sm-1
+                            span(style="margin-top: 30px") €
                     .row
                         .sub-field.col-sm-12
                             include checkbox
@@ -49,6 +51,6 @@
 
     .row
         .form-field.col-sm-12
-            button#add-stolen-item-btn(type="button") Lisa vara
+            button.btn#add-stolen-item-btn(type="button") Lisa vara
 
 script(src='js/esemed.js')
