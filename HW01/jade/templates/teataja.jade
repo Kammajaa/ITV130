@@ -1,26 +1,26 @@
 .container
     h3.form-title TEATAJA
     .row
-        .form-field.col-sm-6.error
-            label Perekonnanimi*
-            label.error-message Kohustuslik
-            input(type="text")
-        .form-field.col-sm-6.error
-            label Eesnimi*
-            label.error-message Kohustuslik
-            input(type="text")
-    .row
         .form-field.col-sm-6
             label Isikukood**
-            input(type="text")
+            input(type="text")#serialNumber
         .form-field.col-sm-6
             label Sünniaeg**
-            input(type="text")
+            input(type="text")#birthDate
+    .row
+        .form-field.col-sm-6
+            label Perekonnanimi*
+            label.error-message(style="display: none") Kohustuslik
+            input(type="text").required#lastName
+        .form-field.col-sm-6
+            label Eesnimi*
+            label.error-message(style="display: none") Kohustuslik
+            input(type="text").required#firstName
     .row
         .form-field.col-sm-6
             label Kodakondsus
             select
-                option(default) -- valige kodakontsus --
+                option -- valige kodakontsus --
                 option Eesti
                 option Soome
                 option Läti
@@ -47,7 +47,8 @@
             input(type="text") 
         .form-field.col-sm-6
             label Telefon*
-            input(type="text")
+            label.error-message(style="display: none") Kohustuslik
+            input(type="text").required
     .row
         .form-field.col-sm-12
             label Lisa märkused (kontakteerumisviisi eelistus, kontakteerumise aeg jm.)
@@ -56,3 +57,5 @@
         .form-field.col-sm-12
             include checkbox
             span.terms Kannatanu on juriidiline isik
+
+script(src='js/teataja.js')
