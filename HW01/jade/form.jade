@@ -3,11 +3,18 @@ html(lang="et")
     include templates/head
 
     body
-        .info Kui kellegi elu või tervis on vahetult ohus, siis helista viivitamatult hädaabinumbrile 112. Ära kasuta seda ankeeti raskest ja/või isikuvastasest kuriteost (vägistamine, tapmine, kehaline väärkohtlemine - löömine, peksmine vm) teatamiseks. Raskest kuriteost teada andmiseks pöördu lähimasse politseijaoskonda.<br/>
-            |Võimalusel allkirjasta vorm digitaalselt. Nii on kindel, kes selle esitas.<br/>
-            |Tähelepanu! Palun kontrolli, et sisestasid enda e-posti aadressi vormile korrektselt. Kui e-posti aadress on ôige, siis peaksid süüteoteate koopia päeva jooksul sisestatud e-posti aadressile saama, mis tähendab, et avaldus on politseini jõudnud. Kui seda ei juhtu, siis palun võta ühendust aadressil ppa@politsei.ee.<br/>
-            |Avalduses ei tohi esitada valeandmeid.<br/>
-            |Vajadusel tuleb menetleja kutsel tulla politseijaoskonda täiendavate ütluste andmiseks.
+        .info Kui kellegi <span class="highlight">elu või tervis</span> on 
+            |<span class="highlight">vahetult ohus</span>, siis <span class="highlight">helista viivitamatult hädaabinumbrile 112</span>.<br/>
+            |<span class="highlight">Ära kasuta seda ankeeti raskest ja/või isikuvastasest kuriteost</span> (vägistamine, tapmine, kehaline väärkohtlemine - löömine, peksmine vm) teatamiseks.
+            |<span class="highlight">Raskest kuriteost teate</span> andmiseks pöördu lähimasse <span class="highlight">politseijaoskonda</span>.
+            |<span class="highlight">Võimalusel allkirjasta</span> vorm <span class="highlight">digitaalselt</span>. Nii on kindel, kes selle esitas.<br/>
+            |<br/><span class="highlight">Tähelepanu!</span> Palun <span class="highlight">kontrolli</span>, et sisestasid enda 
+            |<span class="highlight">e-posti aadressi</span> vormile korrektselt.
+            |Kui e-posti aadress on ôige, siis <span class="highlight">peaksid süüteoteate koopia päeva jooksul sisestatud e-posti aadressile saama</span>, 
+            |mis tähendab, et avaldus on politseini jõudnud. 
+            |<span class="highlight">Kui seda ei juhtu</span>, siis palun <span class="highlight">võta ühendust aadressil ppa@politsei.ee.</span><br/>
+            |<br/><span class="highlight" style="font-size:1.2em">Avalduses ei tohi esitada valeandmeid.</span><br/>
+            |<br/>Vajadusel tuleb menetleja kutsel tulla politseijaoskonda täiendavate ütluste andmiseks.
             
         form#report-form
             h2 Politseile avalduse
@@ -15,10 +22,10 @@ html(lang="et")
                 |* - märgitud väljad on kohustuslikud<br>
                 |** - märgitud väljadest üks on kohustuslik (täida isikukood või sünniaeg)
                 
+            include templates/toimumine
+            
             include templates/teataja
             
-            include templates/toimumine
-
             include templates/esemed
                     
             include templates/syydlased
@@ -36,10 +43,8 @@ html(lang="et")
                         span.terms.importand Kõik esitatud andmed on õiged. Olen teadlik, et valeandmete esitamine on karistatav
                 .row.last
                     .form-field.col-sm-6
-                        button.big
-                            span Kinnita ja allkirjasta ID kaardiga
+                        button.big.btn Kinnita ja allkirjasta ID kaardiga
                     .form-field.col-sm-6
-                        button.big
-                            span Kinnita allkirjastamata
+                        button.big.btn Kinnita allkirjastamata
             include templates/dialog
         script(src="js/main.js")

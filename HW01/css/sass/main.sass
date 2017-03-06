@@ -1,17 +1,26 @@
 @import "bootstrap"
 
 $background-color: rgb(190, 212, 236)
-$text-color: rgb(143, 146, 154)
 $border-color: rgb(235, 235, 235)
 $checked-color: rgb(95, 95, 95)
+$btn-color: #D6D6D6
+$highlight-red: rgb(199, 81, 37)
 
 body
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif
+
 
     .info
         padding: 15px
         max-width: 740px
         margin: 50px auto 0
+        font:
+            size: 1em
+            weight: bold
+
+    .highlight
+        color: $highlight-red
+        font-size: 1.1em
 
     #report-form
         border: solid $border-color 1px
@@ -67,7 +76,7 @@ body
             font-size: .9em
 
             &.short
-                max-width: 120px
+                max-width: 100px
                 float: left
                 margin-top: -5px
 
@@ -78,7 +87,7 @@ body
 
         .checkbox
             float: left
-            fill: $border-color
+            fill: rgb(187, 187, 187)
             opacity: .8
             cursor: pointer
             position: relative
@@ -123,7 +132,10 @@ body
                 width: 100%
 
             &:hover
-                opacity: .9
+                opacity: .8
+
+        .btn
+            background: $btn-color
 
         .rules
             margin:
@@ -218,7 +230,7 @@ body
                     weight: bold
 
             .error-message
-                color: rgb(159, 7, 16)
+                color: $highlight-red
                 padding-left: 10px
 
 
