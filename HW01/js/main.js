@@ -28,5 +28,28 @@ $(function() {
             $(this).parent().removeClass("error");
           $(this).parent().find(".error-message").hide();
         }
+    }).on("click", ".submitBtn", function() {
+      console.log("SUBMIT");
+      $(".required").each(function() {
+        checkRequired($(this));
+      });
+      var body = $('body');
+      body.animate({
+        scrollTop: $('.error').offset().top - 125
+      });
+      var formSubmit = {
+
+      }
+
     });
 });
+
+function checkRequired(field) {
+  if (field.val() === '') {
+    field.parent().addClass("error");
+    field.parent().find(".error-message").show();
+  } else {
+    field.parent().removeClass("error");
+    field.parent().find(".error-message").hide();
+  }
+}
