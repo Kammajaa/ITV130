@@ -1,17 +1,17 @@
 .container
     h3.form-title TUNNISTAJA(TE) ANDMED
     .row
-        .form-field.col-sm-12
-            .sub-form
-                h4 Tunnistaja#1
-                a.close-btn(href="#") X
+        .subFormHolder.form-field.col-sm-12
+            .template.subForm.sub-form.display(style="display: none")
+                h4 Tunnistaja
+                a.close-btn.closeItem(href="#") X
                 .row
                     .sub-field.col-sm-6
                         label Perekonnanimi
-                        input(type="text")
+                        input(type="text").title2.lastName
                     .sub-field.col-sm-6
                         label Eesnimi
-                        input(type="text")
+                        input(type="text").title2.firstName
                 .row
                     .sub-field.col-sm-6
                         label Isikukood
@@ -50,5 +50,5 @@
                 
     .row
         .form-field.col-sm-12
-            button.btn#add-witness-btn Lisa tunnistaja
+            button.btn.addBtn#add-witness-btn(type="button") Lisa tunnistaja
         

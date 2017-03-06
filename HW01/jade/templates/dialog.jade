@@ -1,4 +1,4 @@
-.dialog
+.dialog(style="display: none")#closeDialog
     h4 Kas kindel?
     a.close-btn(href="#") X
     span Olete kindel, et soovite kustutada?
@@ -9,4 +9,8 @@
         $(".dialog .close-btn").click(function(e) {
             e.preventDefault();
             $(this).parent().hide();
+        });
+        $(".dialog .cancel").click(function (e) {
+          e.preventDefault();
+          $(this).parent().hide();
         });

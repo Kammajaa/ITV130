@@ -1,27 +1,27 @@
 var esemeid = 1;
 
-$('#add-stolen-item-btn').on("click", function () {
-  var vara = $('#vara').clone();
-  vara.attr("id", "vara_" + esemeid);
-  vara.html(vara.html().replace(/Rvara_idR/g, esemeid++));
-  vara.show();
-  $('#test').append(vara);
-});
+// $('#add-stolen-item-btn').on("click", function () {
+//   var vara = $('#vara').clone();
+//   vara.attr("id", "vara_" + esemeid);
+//   vara.html(vara.html().replace(/Rvara_idR/g, esemeid++));
+//   vara.show();
+//   $('#test').append(vara);
+// });
 
-function testhide(id) {
-  var item = $("#vara_content_" + id);
-  if (item.is(":visible")) {
-    item.slideUp();
-  } else {
-    item.slideDown();
-  }
-}
+// function testhide(id) {
+//   var item = $("#vara_content_" + id);
+//   if (item.is(":visible")) {
+//     item.slideUp();
+//   } else {
+//     item.slideDown();
+//   }
+// }
 
-function clost(id) {
-  console.log("#vara_" + id);
-  $('#closeDialog').show();
-
-  var item_id = '#vara_' + id;
-  console.log(item_id);
-  $(item_id).remove();
-}
+// function clost(id) {
+//   console.log("#vara_" + id);
+//   $('#closeDialog').show();
+//
+//   var item_id = '#vara_' + id;
+//   console.log(item_id);
+//   $(item_id).remove();
+// }
