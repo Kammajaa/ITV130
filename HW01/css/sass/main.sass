@@ -3,7 +3,7 @@
 $background-color: rgb(190, 212, 236)
 $border-color: rgb(235, 235, 235)
 $checked-color: rgb(95, 95, 95)
-$btn-color: #D6D6D6
+$btn-color: #eeeeee
 $highlight-red: rgb(199, 81, 37)
 
 body
@@ -11,6 +11,7 @@ body
 
 
     .info
+        border: solid 1px rgba($highlight-red, .3)
         padding: 15px
         max-width: 740px
         margin: 50px auto 0
@@ -26,7 +27,7 @@ body
         border: solid $border-color 1px
         padding: 15px
         max-width: 740px
-        margin: 50px auto
+        margin: 20px auto
 
         @media (max-width: $screen-sm)
             border: none
@@ -39,6 +40,10 @@ body
             font-weight: bold
             text-align: center
             width: 100%
+
+        h2
+            margin: 10px auto 20px
+            font-size: 35px
 
         h3
             border-bottom: solid $border-color 1px
@@ -136,6 +141,7 @@ body
 
         .btn
             background: $btn-color
+            border: solid 1px rgb(220, 220, 220)
 
         .rules
             margin:

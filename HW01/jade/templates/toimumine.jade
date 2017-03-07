@@ -4,9 +4,9 @@
         .form-field.col-sm-6
             label Sündmuse kuupäev*
             label.error-message(style="display: none") Kohustuslik
-            input(type="text").required
+            input.datepicker(type="text").required
         .form-field.col-sm-6
-            label Sündmuse lellaaeg
+            label Sündmuse kellaaeg
             input(type="text")
     .row
         .form-field.col-sm-6
@@ -35,7 +35,7 @@
             label Sündmuse kirjeldus*
             label.error-message(style="display: none") Kohustuslik
             textarea.required
-    .row
+    .row(style="margin-top: 2px")
         .form-field.col-sm-12
             span.short Tekitatud varaline kahju:
             input.short(type="text")

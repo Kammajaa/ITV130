@@ -9,6 +9,10 @@ $(function() {
         }
     };
 
+    $("body").on("focus", ".datepicker", function() {
+        $(this).datepicker({dateFormat: "d.mm.yy"});
+    });
+
     $("input[type='checkbox']").each(function() {
         updateCheckbox($(this));
     });
@@ -27,7 +31,8 @@ $(function() {
             $(this).parent().removeClass("display");
         }
     }).on("focusout", ".required", function() {
-        if ($(this).val() === '') {
+        if ($(this).val().trim() === '') {
+            $(this).val("");
             $(this).parent().addClass("error");
             $(this).parent().find(".error-message").show();
         } else {
