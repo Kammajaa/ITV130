@@ -6,15 +6,84 @@ $checked-color: rgb(95, 95, 95)
 $btn-color: #eeeeee
 $highlight-red: rgb(199, 81, 37)
 
+html
+    height: 100%
+
 body
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif
+    max-width: 1120px
+    margin: 0 auto
+    position: relative
 
+    .header
+        max-width: 1120px
+        margin: 50px auto 0
+
+    .navbar-toggle
+        border: solid $border-color
+
+    .icon-bar
+        display: block
+        width: 22px
+        height: 2px
+        background-color: $border-color
+
+    .logo
+        width: 397px
+        heigth: 133px
+        float: left
+
+    .emptybox
+        width: 723px
+        height: 133px
+        float: right
+
+    .clearfloat
+        clear: both
+        height: 0
+        font-size: 1px
+        line-height: 0px
+
+    .nav-container
+        border: none
+        border:
+            top: solid $border-color 1px
+            bottom:  solid $border-color 1px
+
+    .form
+        width: 760px
+        float: left
+
+    .sidebar
+        width: 340px
+        float: right
+        margin-top: 10px
+
+        .serviceList
+            border: solid $border-color 1px
+            padding: 15px 0px 15px 0px
+
+            ul
+                list-style: none
+                margin: 10px
+
+        .findUs
+            margin-top: 30px
+            height: 200px
+            border: solid $border-color 1px
+            padding: 20px 10px 30px 10px
+
+            .map
+                float: left
+
+            .findUsLabel
+                float: right
 
     .info
         border: solid 1px rgba($highlight-red, .3)
         padding: 15px
         max-width: 740px
-        margin: 50px auto 0
+        margin: 10px auto 0
         font:
             size: 1em
             weight: bold
@@ -27,7 +96,7 @@ body
         border: solid $border-color 1px
         padding: 15px
         max-width: 740px
-        margin: 20px auto
+        margin: 50px auto
 
         @media (max-width: $screen-sm)
             border: none
@@ -302,3 +371,20 @@ body
             .ok
                 @extend .cancel
                 background-color: rgb(143, 213, 132)
+
+.footer
+    width: 1100px
+    right: 0px
+    bottom: 0px
+    left: 0px
+    padding: 1rem
+    text-align: center
+
+    hr
+        width: 1100px
+        margin-top: 20px
+        border-color: $border-color
+
+    pre
+        background: none
+        border: none
