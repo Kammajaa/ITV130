@@ -30,7 +30,7 @@
                             option Leedu
                             
                     .sub-field.col-sm-6
-                        label Riik*
+                        label Riik
                         select
                             option(default) Eesti
                             option Soome
@@ -43,10 +43,12 @@
                 .row
                     .sub-field.col-sm-6
                         label E-post
-                        input(type="text")
+                        label.error-message(style="display: none") Vigane e-post
+                        input.email(type="text") 
                     .sub-field.col-sm-6
                         label Telefon
-                        input(type="text")
+                        label.error-message(style="display: none") Vigane telefoni nr.
+                        input.phone-nr(type="text")
 
     .row
         .form-field.col-sm-12

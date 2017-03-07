@@ -1,6 +1,17 @@
 var toClose = null;
 
 $(function() {
+
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test( $email );
+    }
+
+    function validatePhone($phone) {
+        var phoneReg = /^(\+?[0-9]{5,20})$/;
+        return phoneReg.test( $phone );
+    }
+
     updateCheckbox = function(checkbox) {
         if (checkbox.is(':checked')) {
             checkbox.parent().addClass("checked");
@@ -10,7 +21,17 @@ $(function() {
     };
 
     $("body").on("focus", ".datepicker", function() {
-        $(this).datepicker({dateFormat: "d.mm.yy"});
+        $(this).datepicker({
+            dateFormat: "d.mm.yy",
+            onClose: function() {
+                if($(this).hasClass("required-date") && $(this).val().trim() === "") {
+                    $(this).parent().addClass("error");
+                    $(this).parent().find(".error-message").show();
+                } else {
+                    $(this).parent().removeClass("error");
+                    $(this).parent().find(".error-message").hide();
+                }
+            }});
     });
 
     $("input[type='checkbox']").each(function() {
@@ -34,7 +55,7 @@ $(function() {
         if ($(this).val().trim() === '') {
             $(this).val("");
             $(this).parent().addClass("error");
-            $(this).parent().find(".error-message").show();
+            $(this).parent().find(".error-message").text("Kohustuslik").show();
         } else {
             $(this).parent().removeClass("error");
           $(this).parent().find(".error-message").hide();
@@ -89,6 +110,26 @@ $(function() {
       } else {
         $(this).closest(".subForm").find("h4").first().text(last + ", " + first);
       }
+    }).on("focusout", ".email", function() {
+        if($(this).val().trim() !== "") {
+            if(!validateEmail($(this).val().trim())) {
+                $(this).parent().addClass("error");
+                $(this).parent().find(".error-message").text("Vigane e-mail").show();
+            } else  {
+                $(this).parent().removeClass("error");
+                $(this).parent().find(".error-message").hide();
+            }
+        }
+    }).on("focusout", ".phone-nr", function() {
+        if($(this).val().trim() !== "") {
+            if(!validatePhone($(this).val().trim())) {
+                $(this).parent().addClass("error");
+                $(this).parent().find(".error-message").text("Vigane telefoni nr.").show();
+            } else  {
+                $(this).parent().removeClass("error");
+                $(this).parent().find(".error-message").hide();
+            }
+        }
     });
 });
 

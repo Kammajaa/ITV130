@@ -44,11 +44,12 @@
     .row
         .form-field.col-sm-6
             label E-post
-            input(type="text") 
+            label.error-message(style="display: none") Vigane e-post
+            input.email(type="text") 
         .form-field.col-sm-6
             label Telefon*
             label.error-message(style="display: none") Kohustuslik
-            input(type="text").required
+            input.phone-nr(type="text").required
     .row
         .form-field.col-sm-12
             label Lisa märkused (kontakteerumisviisi eelistus, kontakteerumise aeg jm.)
