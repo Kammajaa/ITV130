@@ -24,7 +24,7 @@ $(function () {
         updateCheckbox($(this));
     });
 
-    $("body").on("focusin", ".datepicker", function () {
+    $("body").on("focus", ".datepicker", function () {
         $(this).datepicker({
             dateFormat: "d.mm.yy",
             onClose: function () {
@@ -142,7 +142,7 @@ $(function () {
         }
     }).on("click", ".submitBtn", function () {
         console.log("SUBMIT");
-        $(".required").each(function () {
+        $(".required, .required-date").each(function () {
             checkRequired($(this));
         });
         var body = $('body');
