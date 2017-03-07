@@ -1,25 +1,25 @@
 .container
     h3.form-title ÄRA VÕETUD / VIIDUD / SAAMATA JÄÄNUD VARA
     .row
-        .subFormHolder.form-field.col-sm-12
+        .subFormHolder.form-field.col-sm-12#possession
             .template.subForm.sub-form.display(style="display: none")
                 h4.headTitle Vara
                 a.close-btn.closeItem(href="#") X
                 .row
                     .sub-field.col-sm-12
                         label Eseme nimetus
-                        input(type="text").title
+                        input(type="text").title.possessionName
                 .row
                     .sub-field.col-sm-6
                         label Soetamise aasta
-                        input(type="text")
+                        input(type="text").acquisitionYear
                     .sub-field.col-sm-5
                         label Ligikaudne hetkeväärtus
-                        input(type="text")
+                        input(type="text").currentValue
                     .sub-field.col-sm-1
                         span(style="margin-top: 30px") €
                 .row
-                    .sub-field.col-sm-12
+                    .sub-field.col-sm-12.inLockedRoom
                         include checkbox
                         span.terms Vara oli lukustatud ruumis
                 .row
@@ -28,28 +28,26 @@
                 .row
                     .sub-field.col-sm-6
                         label Kuupäev
-                        input.datepicker(type="text")
+                        input.datepicker(type="text").possessionDate
                     .sub-field.col-sm-6
                         label Kellaaeg
-                        input(type="text")
+                        input(type="text").possessionTime
                 .row
                     hr
                     .sub-field.col-sm-12 Vara valdusest väljaminek on tuvastatud (polnud enam eset/asja teatajal/kannatanul olemas)
                 .row
                     .sub-field.col-sm-6
                         label Kuupäev
-                        input.datepicker(type="text")
+                        input.datepicker(type="text").possessionLeaveDate
                     .sub-field.col-sm-6
                         label Kellaaeg
-                        input(type="text")
+                        input(type="text").possessionLeaveTime
                 .row
                     hr
                     .sub-field.col-sm-12
                         label Tundemärgid ja eritunnused (sh raaminumber, seerianumber, IMEI-kood jm)
-                        textarea
+                        textarea.possessionAdditionalInfo
 
     .row
         .form-field.col-sm-12
             button.btn.addBtn#add-stolen-item-btn(type="button") Lisa vara
-
-script(src='js/esemed.js')

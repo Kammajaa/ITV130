@@ -1,7 +1,7 @@
 .container
     h3.form-title SÜÜTEO TOIME PANNUD ISIKU(TE) ANDMED 
     .row
-        .subFormHolder.form-field.col-sm-12
+        .subFormHolder.form-field.col-sm-12#culprit
             .template.subForm.sub-form.display(style="display: none")
                 h4 Süüdlane
                 a.close-btn.closeItem(href="#") X
@@ -15,40 +15,40 @@
                 .row
                     .sub-field.col-sm-6
                         label Isikukood
-                        input(type="text")
+                        input(type="text").identificationCode
                     .sub-field.col-sm-6
                         label Sünniaeg
-                        input.datepicker(type="text")
+                        input.datepicker(type="text").birthDate
                 .row
                     .sub-field.col-sm-6
                         label Kodakontsus
-                        select
+                        select.nationality
                             option(default) -- valige kodakontsus --
                             option Eesti
                             option Soome
                             option Läti
                             option Leedu
-                            
+
                     .sub-field.col-sm-6
-                        label Riik
-                        select
+                        label Riik*
+                        select.country
                             option(default) Eesti
                             option Soome
                             option Läti
                             option Leedu
                 .row
                     .sub-field.col-sm-12
-                        label Aadress
-                        input(type="text")
+                        label Aadress.
+                        input(type="text").address
                 .row
                     .sub-field.col-sm-6
                         label E-post
                         label.error-message(style="display: none") Vigane e-post
-                        input.email(type="text") 
+                        input.email(type="text").eMail
                     .sub-field.col-sm-6
                         label Telefon
                         label.error-message(style="display: none") Vigane telefoni nr.
-                        input.phone-nr(type="text")
+                        input.phone-nr(type="text").phone
 
     .row
         .form-field.col-sm-12

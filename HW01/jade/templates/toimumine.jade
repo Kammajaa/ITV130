@@ -4,22 +4,22 @@
         .form-field.col-sm-6
             label Sündmuse kuupäev*
             label.error-message(style="display: none") Kohustuslik
-            input.datepicker(type="text").required-date
+            input.datepicker(type="text").required-date#eventDate
         .form-field.col-sm-6
             label Sündmuse kellaaeg
-            input(type="text")
+            input(type="text")#eventTime
     .row
         .form-field.col-sm-6
             label Sündmus toimus riigis*
-            select
+            select#eventCountry
                 option(default) Eesti
                 option Soome
                 option Läti
                 option Leedu
-                
+
         .form-field.col-sm-6
             label Sündmus toimus maakonnas
-            select
+            select#eventCounty
                 option(default) -- valige maakond --
                 option Harjumaa
                 option Läänemaa
@@ -29,14 +29,14 @@
         .form-field.col-sm-12
             label Sündmuse koht (nt aadress, park, kauplus, internet vms)*
             label.error-message(style="display: none") Kohustuslik
-            input(type="text").required
+            input(type="text").required#eventPlace
     .row
         .form-field.col-sm-12
             label Sündmuse kirjeldus*
             label.error-message(style="display: none") Kohustuslik
-            textarea.required
+            textarea.required#eventDescription
     .row(style="margin-top: 2px")
         .form-field.col-sm-12
             span.short Tekitatud varaline kahju:
-            input.short(type="text")
+            input.short(type="text")#proprietaryDamage
             span.short €

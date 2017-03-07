@@ -1,144 +1,264 @@
 var toClose = null;
 
-$(function() {
+$(function () {
 
     function validateEmail($email) {
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        return emailReg.test( $email );
+        return emailReg.test($email);
     }
 
     function validatePhone($phone) {
         var phoneReg = /^(\+?[0-9]{5,20})$/;
-        return phoneReg.test( $phone );
+        return phoneReg.test($phone);
     }
 
-    updateCheckbox = function(checkbox) {
+    function updateCheckbox(checkbox) {
         if (checkbox.is(':checked')) {
             checkbox.parent().addClass("checked");
         } else {
             checkbox.parent().removeClass("checked");
         }
-    };
+    }
 
-    $("body").on("focus", ".datepicker", function() {
+    $("input[type='checkbox']").each(function () {
+        updateCheckbox($(this));
+    });
+
+    $("body").on("focusin", ".datepicker", function () {
         $(this).datepicker({
             dateFormat: "d.mm.yy",
-            onClose: function() {
-                if($(this).hasClass("required-date") && $(this).val().trim() === "") {
+            onClose: function () {
+                if ($(this).hasClass("required-date") && $(this).val().trim() === "") {
                     $(this).parent().addClass("error");
                     $(this).parent().find(".error-message").show();
                 } else {
                     $(this).parent().removeClass("error");
                     $(this).parent().find(".error-message").hide();
                 }
-            }});
-    });
-
-    $("input[type='checkbox']").each(function() {
+            }
+        });
+    }).on("change", "input[type='checkbox']", function () {
         updateCheckbox($(this));
-    });
-
-    $("body").on("change", "input[type='checkbox']", function() {
-        updateCheckbox($(this));
-    }).on("click", ".sub-form h4", function() {
-      // console.log($(this).parent());
+    }).on("click", ".sub-form h4", function () {
+        // console.log($(this).parent());
 
         if (!$(this).parent().hasClass("display")) {
-          $(this).closest('.container').find('.display').removeClass("display");
+            $(this).closest('.container').find('.display').removeClass("display");
             // var i = $(this).parent().parent().find(".subForm");
             $(this).parent().addClass("display");
             // i.removeClass("display");
         } else {
             $(this).parent().removeClass("display");
         }
-    }).on("focusout", ".required", function() {
-        if ($(this).val().trim() === '') {
-            $(this).val("");
+    }).on("focusout", ".required", function () {
+        if ($(this).val() === '') {
             $(this).parent().addClass("error");
-            $(this).parent().find(".error-message").text("Kohustuslik").show();
+            $(this).parent().find(".error-message").show();
         } else {
             $(this).parent().removeClass("error");
-          $(this).parent().find(".error-message").hide();
+            $(this).parent().find(".error-message").hide();
         }
-    }).on("click", ".submitBtn", function() {
-      console.log("SUBMIT");
-      $(".required").each(function() {
-        checkRequired($(this));
-      });
-      var body = $('body');
-      body.animate({
-        scrollTop: $('.error').offset().top - 125
-      });
-      var formSubmit = {
+    }).on("input", ".required", function () {
+        $(this).parent().removeClass("error");
+        $(this).parent().find(".error-message").hide();
+    }).on("click", ".addBtn", function () {
+        var item = $(this).closest('.container').find('.template').first().clone();
+        console.log(item);
+        item.removeClass('template');
+        item.addClass('display');
+        item.show();
+        $(this).closest('.container').find('.display').removeClass("display");
+        $(this).closest('.container').find('.subFormHolder').append(item);
+    }).on("click", ".closeItem", function (e) {
+        e.preventDefault();
+        $('#closeDialog').show();
+        toClose = $(this).closest('.subForm');
+    }).on("click", ".dialog .ok", function (e) {
+        e.preventDefault();
+        if (toClose !== null) {
+            toClose.remove();
+        }
+        toClose = null;
+        $(this).parent().hide();
+    }).on("input", ".title", function () {
+        if ($(this).val().trim() === '') {
+            $(this).closest(".subForm").find("h4").first().text($(this).closest('.container').find('.template').first().find('h4').first().text());
+        } else {
+            $(this).closest(".subForm").find("h4").first().text($(this).val());
+        }
+    }).on("input", ".title2", function () {
+        updateTitle($(this));
+    }).on("input", ".identificationCode", function () {
+        var serialNumber = $(this).val();
+        var parent = $(this).closest('.subForm, .container');
+        // console.log(serialNumber)
+        if (serialNumber.length === 11) {
+            $.get("http://kristjan.tk:8081/" + serialNumber, function (data) {
+            }).done(function (data) {
+                var firstName = parent.find('.lastName').first();
+                var lastName = parent.find('.firstName').first();
+                if (data.lastName !== null && lastName.val().trim() === '') {
+                    lastName.val(data.lastName);
+                    if (parent.hasClass('container')) {
+                        lastName.parent().removeClass("error");
+                        lastName.parent().find(".error-message").hide();
+                    }
+                }
+                if (data.firstName !== null && firstName.val().trim() === '') {
+                    firstName.val(data.firstName);
+                    if (parent.hasClass('container')) {
+                        firstName.parent().removeClass("error");
+                        firstName.parent().find(".error-message").hide();
+                    }
+                }
+                if (parent.hasClass('subForm')) {
+                    updateTitle(firstName);
+                }
+            });
+            var yearPref = 19;
+            if (serialNumber.substr(0, 1) === '5' || serialNumber.substr(0, 1) === '6') yearPref++;
+            parent.find('.birthDate').first().val(serialNumber.substr(5, 2) + "." + serialNumber.substr(3, 2) + "." + yearPref + serialNumber.substr(1, 2));
 
-      }
-
-    }).on("click", ".addBtn", function() {
-      var item = $(this).closest('.container').find('.template').first().clone();
-      console.log(item);
-      item.removeClass('template');
-      item.addClass('display');
-      item.show();
-      $(this).closest('.container').find('.display').removeClass("display");
-      $(this).closest('.container').find('.subFormHolder').append(item);
-    }).on("click", ".closeItem", function(e) {
-      e.preventDefault();
-      $('#closeDialog').show();
-      toClose = $(this).closest('.subForm');
-    }).on("click", ".dialog .ok", function(e) {
-      e.preventDefault();
-      if (toClose !== null) {
-        toClose.remove();
-      }
-      toClose = null;
-      $(this).parent().hide();
-    }).on("input", ".title", function() {
-      if ($(this).val().trim() === '') {
-        $(this).closest(".subForm").find("h4").first().text($(this).closest('.container').find('.template').first().find('h4').first().text());
-      } else {
-        $(this).closest(".subForm").find("h4").first().text($(this).val());
-      }
-    }).on("input", ".title2", function() {
-      var first = $(this).closest('.subForm').find('.firstName').first().val().trim();
-      var last = $(this).closest('.subForm').find('.lastName').first().val().trim();
-      if (first === '' && last === '') {
-        $(this).closest(".subForm").find("h4").first().text($(this).closest('.container').find('.template').first().find('h4').first().text());
-      } else if (first === '') {
-        $(this).closest(".subForm").find("h4").first().text(last);
-      } else if (last === '') {
-        $(this).closest(".subForm").find("h4").first().text(first);
-      } else {
-        $(this).closest(".subForm").find("h4").first().text(last + ", " + first);
-      }
-    }).on("focusout", ".email", function() {
-        if($(this).val().trim() !== "") {
-            if(!validateEmail($(this).val().trim())) {
+        }
+    }).on("focusout", ".email", function () {
+        if ($(this).val().trim() !== "") {
+            if (!validateEmail($(this).val().trim())) {
                 $(this).parent().addClass("error");
                 $(this).parent().find(".error-message").text("Vigane e-mail").show();
-            } else  {
+            } else {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
         }
-    }).on("focusout", ".phone-nr", function() {
-        if($(this).val().trim() !== "") {
-            if(!validatePhone($(this).val().trim())) {
+    }).on("focusout", ".phone-nr", function () {
+        if ($(this).val().trim() !== "") {
+            if (!validatePhone($(this).val().trim())) {
                 $(this).parent().addClass("error");
                 $(this).parent().find(".error-message").text("Vigane telefoni nr.").show();
-            } else  {
+            } else {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
         }
+    }).on("click", ".submitBtn", function () {
+        console.log("SUBMIT");
+        $(".required").each(function () {
+            checkRequired($(this));
+        });
+        var body = $('body');
+        body.animate({
+            scrollTop: $('.error').offset().top - 125
+        });
+        var formSubmit = {
+            event: {
+                date: $('#eventDate').val().trim(),
+                time: $('#eventTime').val().trim(),
+                country: $('#eventCountry').val(),
+                county: $('#eventCounty').val(),
+                place: $('#eventPlace').val().trim(),
+                description: $('#eventDescription').val().trim(),
+                proprietaryDamage: $('#proprietaryDamage').val().trim()
+            },
+            person: {
+                identificationCode: $('#serialNumber').val().trim(),
+                birthDate: $('#birthDate').val().trim(),
+                lastName: $('#lastName').val().trim(),
+                firstName: $('#firstName').val().trim(),
+                nationality: $('#personNationality').val(),
+                county: $('#personCounty').val(),
+                address: $('#personAddress').val().trim(),
+                postcode: $('#personPostcode').val().trim(),
+                eMail: $('#personEpost').val().trim(),
+                phone: $('#personPhone').val().trim(),
+                additional: $('#personAdditional').val().trim(),
+                isJuridical: $('#personIsJuridical').find('.checkbox').first().hasClass('checked')
+            },
+            possession: [],
+            culprit: [],
+            witness: [],
+            additional: {
+                agreementProcedure: $('#agreementProcedure').find('.checkbox').first().hasClass('checked'),
+                documentsToEmail: $('#documentsToEmail').find('.checkbox').first().hasClass('checked'),
+                informationByEtoimik: $('#informationByEtoimik').find('.checkbox').first().hasClass('checked')
+            }
+        };
+
+        $('#possession').children().each(function () {
+            if ($(this).hasClass('template')) return;
+            var possession = {
+                name: $(this).find('.possessionName').first().val().trim(),
+                acquisitionYear: $(this).find('.acquisitionYear').first().val().trim(),
+                currentValue: $(this).find('.currentValue').first().val().trim(),
+                inLockedRoom: $(this).find('.inLockedRoom').first().find('.checkbox').first().hasClass('checked'),
+                hadDate: $(this).find('.possessionDate').first().val().trim(),
+                hadTime: $(this).find('.possessionTime').first().val().trim(),
+                leaveDate: $(this).find('.possessionLeaveDate').first().val().trim(),
+                leaveTime: $(this).find('.possessionLeaveTime').first().val().trim(),
+                additional: $(this).find('.possessionAdditionalInfo').first().val().trim()
+            };
+            formSubmit.possession.push(possession);
+        });
+        $('#culprit').children().each(function () {
+            if ($(this).hasClass('template')) return;
+            var culprit = {
+                lastName: $(this).find('.lastName').first().val().trim(),
+                firstName: $(this).find('.firstName').first().val().trim(),
+                identificationCode: $(this).find('.identificationCode').first().val().trim(),
+                birthDate: $(this).find('.birthDate').first().val().trim(),
+                nationality: $(this).find('.nationality').first().val(),
+                country: $(this).find('.country').first().val(),
+                address: $(this).find('.address').first().val().trim(),
+                eMail: $(this).find('.eMail').first().val().trim(),
+                phone: $(this).find('.phone').first().val().trim
+            };
+            formSubmit.culprit.push(culprit);
+        });
+        $('#witness').children().each(function () {
+            if ($(this).hasClass('template')) return;
+            var witness = {
+                lastName: $(this).find('.lastName').first().val().trim(),
+                firstName: $(this).find('.firstName').first().val().trim(),
+                identificationCode: $(this).find('.identificationCode').first().val().trim(),
+                birthDate: $(this).find('.birthDate').first().val().trim(),
+                nationality: $(this).find('.nationality').first().val(),
+                country: $(this).find('.country').first().val(),
+                address: $(this).find('.address').first().val().trim(),
+                eMail: $(this).find('.eMail').first().val().trim(),
+                phone: $(this).find('.phone').first().val().trim
+            };
+            formSubmit.culprit.push(witness);
+        });
+
+
+        console.log(formSubmit);
+        // var w = window.open('about:blank', 'Andmed');
+        // w.document.write(JSON.stringify(formSubmit, null, ' '));
+        // w.document.close();
+
+
     });
 });
 
 function checkRequired(field) {
-  if (field.val() === '') {
-    field.parent().addClass("error");
-    field.parent().find(".error-message").show();
-  } else {
-    field.parent().removeClass("error");
-    field.parent().find(".error-message").hide();
-  }
+    if (field.val() === '') {
+        field.parent().addClass("error");
+        field.parent().find(".error-message").show();
+    } else {
+        field.parent().removeClass("error");
+        field.parent().find(".error-message").hide();
+    }
+}
+
+function updateTitle(title) {
+    var first = title.closest('.subForm').find('.firstName').first().val().trim();
+    var last = title.closest('.subForm').find('.lastName').first().val().trim();
+    if (first === '' && last === '') {
+        title.closest(".subForm").find("h4").first().text(title.closest('.container').find('.template').first().find('h4').first().text());
+    } else if (first === '') {
+        title.closest(".subForm").find("h4").first().text(last);
+    } else if (last === '') {
+        title.closest(".subForm").find("h4").first().text(first);
+    } else {
+        title.closest(".subForm").find("h4").first().text(last + ", " + first);
+    }
 }

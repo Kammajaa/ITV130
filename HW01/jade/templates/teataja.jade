@@ -3,23 +3,23 @@
     .row
         .form-field.col-sm-6
             label Isikukood**
-            input(type="text")#serialNumber
+            input(type="text")#serialNumber.identificationCode
         .form-field.col-sm-6
             label Sünniaeg**
-            input.datepicker(type="text")#birthDate
+            input.datepicker(type="text")#birthDate.birthDate
     .row
         .form-field.col-sm-6
             label Perekonnanimi*
             label.error-message(style="display: none") Kohustuslik
-            input(type="text").required#lastName
+            input(type="text").required#lastName.lastName
         .form-field.col-sm-6
             label Eesnimi*
             label.error-message(style="display: none") Kohustuslik
-            input(type="text").required#firstName
+            input(type="text").required#firstName.firstName
     .row
         .form-field.col-sm-6
             label Kodakondsus
-            select
+            select#personNationality
                 option -- valige kodakontsus --
                 option Eesti
                 option Soome
@@ -27,7 +27,7 @@
                 option Leedu
         .form-field.col-sm-6
             label Maakond
-            select
+            select#personCounty
                 option(default) -- valige maakond --
                 option Harjumaa
                 option Läänemaa
@@ -36,27 +36,25 @@
     .row
         .form-field.col-sm-10
             label Aadress
-            input(type="text" placeholder="Linn tänav maja nr./korteri nr.") 
+            input(type="text" placeholder="Linn tänav maja nr./korteri nr.")#personAddress
         .form-field.col-sm-2
             label Sihtnumber
-            input(type="text") 
+            input(type="text")#personPostcode
 
     .row
         .form-field.col-sm-6
             label E-post
             label.error-message(style="display: none") Vigane e-post
-            input.email(type="text") 
+            input.email(type="text")#personEpost
         .form-field.col-sm-6
             label Telefon*
             label.error-message(style="display: none") Kohustuslik
-            input.phone-nr(type="text").required
+            input.phone-nr(type="text").required#personPhone
     .row
         .form-field.col-sm-12
             label Lisa märkused (kontakteerumisviisi eelistus, kontakteerumise aeg jm.)
-            textarea
+            textarea#personAdditional
     .row
-        .form-field.col-sm-12
+        .form-field.col-sm-12#personIsJuridical
             include checkbox
             span.terms Kannatanu on juriidiline isik
-
-script(src='js/teataja.js')
