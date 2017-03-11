@@ -299,8 +299,18 @@ body
             &:last-child
                 border: none
 
+        .sumbmit-contaier
+            border: none
+
+            .error-message
+                width: 100%
+
+            @media (max-width: $screen-sm)
+                .error
+                    height: 105px
+
         .row.last
-            margin: 0px -15px
+            margin: 10px -15px 0
 
         .sub-form
             padding: 0 2px 2px
@@ -368,6 +378,9 @@ body
                         weight: bold
                         size: 1.1em
 
+        .error-message
+            display: none
+
         .error
             -webkit-box-shadow: 0px 0px 10px 0px red
             -moz-box-shadow: 0px 0px 10px 0px red
@@ -381,6 +394,7 @@ body
             .error-message
                 color: $highlight-red
                 padding-left: 10px
+                display: block
 
 
         .dialog

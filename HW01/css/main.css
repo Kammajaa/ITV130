@@ -6036,8 +6036,15 @@ body {
           border: none; } }
       body #report-form .container:last-child {
         border: none; }
+    body #report-form .sumbmit-contaier {
+      border: none; }
+      body #report-form .sumbmit-contaier .error-message {
+        width: 100%; }
+      @media (max-width: 615px) {
+        body #report-form .sumbmit-contaier .error {
+          height: 105px; } }
     body #report-form .row.last {
-      margin: 0px -15px; }
+      margin: 10px -15px 0; }
     body #report-form .sub-form {
       padding: 0 2px 2px;
       overflow: hidden;
@@ -6090,6 +6097,8 @@ body {
           text-decoration: underline;
           font-weight: bold;
           font-size: 1.1em; }
+    body #report-form .error-message {
+      display: none; }
     body #report-form .error {
       -webkit-box-shadow: 0px 0px 10px 0px red;
       -moz-box-shadow: 0px 0px 10px 0px red;
@@ -6099,7 +6108,8 @@ body {
         font-weight: bold; }
       body #report-form .error .error-message {
         color: #c75125;
-        padding-left: 10px; }
+        padding-left: 10px;
+        display: block; }
     body #report-form .dialog {
       font-weight: bold;
       border: solid 1px #c8c8c8;
