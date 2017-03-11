@@ -24,6 +24,14 @@ $(function () {
         updateCheckbox($(this));
     });
 
+    $(".message").on("click", function() {
+        if($(this).parent().hasClass("open")) {
+            $(this).parent().removeClass("open");
+        } else {
+            $(this).parent().addClass("open");
+        }
+    });
+
     $("body").on("focus", ".datepicker", function () {
         $(this).datepicker({
             dateFormat: "d.mm.yy",
@@ -51,9 +59,9 @@ $(function () {
             $(this).parent().removeClass("display");
         }
     }).on("focusout", ".required", function () {
-        if ($(this).val() === '') {
+        if ($(this).val().trim() === '') {
             $(this).parent().addClass("error");
-            $(this).parent().find(".error-message").show();
+            $(this).parent().find(".error-message").text("Kohustuslik").show();
         } else {
             $(this).parent().removeClass("error");
             $(this).parent().find(".error-message").hide();
@@ -129,6 +137,11 @@ $(function () {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
+        } else {
+            if(!$(this).hasClass("required")) {
+                $(this).parent().removeClass("error");
+                $(this).parent().find(".error-message").hide();
+            }
         }
     }).on("focusout", ".phone-nr", function () {
         if ($(this).val().trim() !== "") {
@@ -136,6 +149,11 @@ $(function () {
                 $(this).parent().addClass("error");
                 $(this).parent().find(".error-message").text("Vigane telefoni nr.").show();
             } else {
+                $(this).parent().removeClass("error");
+                $(this).parent().find(".error-message").hide();
+            }
+        } else {
+            if(!$(this).hasClass("required")) {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
@@ -242,7 +260,7 @@ $(function () {
 function checkRequired(field) {
     if (field.val() === '') {
         field.parent().addClass("error");
-        field.parent().find(".error-message").show();
+        field.parent().find(".error-message").text("Kohustuslik").show();
     } else {
         field.parent().removeClass("error");
         field.parent().find(".error-message").hide();

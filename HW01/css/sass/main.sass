@@ -20,13 +20,13 @@ body
         margin: 50px auto 0
 
     .navbar-toggle
-        border: solid $border-color
+        border: solid $checked-color
 
-    .icon-bar
-        display: block
-        width: 22px
-        height: 2px
-        background-color: $border-color
+        .icon-bar
+            display: block
+            width: 22px
+            height: 2px
+            background-color: $checked-color
 
     .logo
         width: 397px
@@ -51,6 +51,16 @@ body
             right: none
             top: solid $border-color 1px
             bottom:  solid $border-color 1px
+
+    .dropdown-menu
+        li
+            padding: 5px
+
+            a
+                color:  #337ab7
+
+                &:hover
+                    color:  #337ab7
 
     .form
         max-width: 760px
@@ -88,14 +98,65 @@ body
                 display: block
                 img
                     margin: 0 20px
+
+    .message
+        cursor: pointer
+        margin: 2px auto
+        width: 100%
+        margin: 0px 10px 20px
+        color: $highlight-red
+        display: none
+
+        @media (max-width: $screen-sm)
+            display: block
+
+        img
+            transition: transform 300ms ease-in-out
+            width: 40px
+            height: 40px
+            margin: 5px 20px
+
+        span
+            display: block
+            font:
+                size: 1.4em
+                weight: normal
+            width: 100%
+            text-align: center
+
+            strong
+                font-weight: bold
+                padding-right: 10px
+
     .info
         border: solid 1px rgba($highlight-red, .3)
         padding: 15px
+        overflow: hidden
         max-width: 740px
         margin: 10px auto 0
+        transition: max-height 500ms ease-in-out
+
+        @media (max-width: $screen-sm)
+            max-height: 80px
+
+        @media (max-width: 408px)
+            max-height: 100px
+
         font:
             size: 1em
             weight: bold
+
+        &.open
+            max-height: 700px
+
+            img
+                -webkit-transform: rotate(180deg)
+                -moz-transform: rotate(180deg)
+                -ms-transform: rotate(180deg)
+                transform: rotate(180deg)
+
+        @media (min-width: $screen-sm)
+            max-height: 700px
 
     .highlight
         color: $highlight-red
@@ -103,7 +164,7 @@ body
 
     #report-form
         border: solid $border-color 1px
-        padding: 10px
+        padding: 15px
         max-width: 740px
         margin: 35px auto
 
@@ -242,6 +303,7 @@ body
             margin: 0px -15px
 
         .sub-form
+            padding: 0 2px 2px
             overflow: hidden
             border: solid $border-color 1px
             margin: 10px auto
@@ -250,7 +312,9 @@ body
             transition: max-height 1s cubic-bezier(0.77, 0.24, 0.03, 0.94)
 
             h4
+                margin-left: -2px
                 cursor: pointer
+                width: calc(100% + 4px)
                 font-weight: bold
 
             &.display
@@ -391,11 +455,24 @@ body
         padding: 1rem
         text-align: center
 
+        .emptybox
+            height: 50px
+            width: 100%
+        img
+            height: 20px
+            width: 20px
+            margin: -5px 5px 0
+
         hr
-            margin: 0 -10px
+            margin: 0 -10px 10px
+
+        svg
+            margin: -5px 0 0 10px
+            width: 30px
+            height: 30px
 
         span
-            margin-bottom: 10px
+            margin: 5px 0px
             display: block
 
             strong
