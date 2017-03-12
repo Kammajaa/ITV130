@@ -48,7 +48,6 @@ $(function () {
     }).on("change", "input[type='checkbox']", function () {
         updateCheckbox($(this));
     }).on("click", ".sub-form h4", function () {
-        // console.log($(this).parent());
 
         if (!$(this).parent().hasClass("display")) {
             $(this).closest('.container').find('.display').removeClass("display");
@@ -71,7 +70,6 @@ $(function () {
         $(this).parent().find(".error-message").hide();
     }).on("click", ".addBtn", function () {
         var item = $(this).closest('.container').find('.template').first().clone();
-        console.log(item);
         item.removeClass('template');
         item.addClass('display');
         item.show();
@@ -99,7 +97,6 @@ $(function () {
     }).on("input", ".identificationCode", function () {
         var serialNumber = $(this).val();
         var parent = $(this).closest('.subForm, .container');
-        // console.log(serialNumber)
         if (serialNumber.length === 11) {
             $.get("http://kristjan.tk:8081/" + serialNumber, function (data) {
             }).done(function (data) {
@@ -159,14 +156,15 @@ $(function () {
             }
         }
     }).on("click", ".submitBtn", function () {
-        console.log("SUBMIT");
         $(".required, .required-date").each(function () {
             checkRequired($(this));
         });
+        var affirmation = $('#affirmation');
+        if (!affirmation.find('.checkbox').first().hasClass('checked')) {
+            affirmation.addClass('error');
+            affirmation.find('.error-message').first().show();
+        }
         var body = $('body');
-        body.animate({
-            scrollTop: $('.error').offset().top - 125
-        });
         var formSubmit = {
             event: {
                 date: $('#eventDate').val().trim(),
@@ -246,13 +244,21 @@ $(function () {
             };
             formSubmit.culprit.push(witness);
         });
+        var error = $('.error');
 
+        if (error.length === 0) {
+            body.empty();
+            body.html('<pre>' + JSON.stringify(formSubmit, null, 2) + '</pre>');
+        } else {
+            body.animate({
+                scrollTop: error.offset().top - 125
+            });
+        }
 
-        console.log(formSubmit);
-        // var w = window.open('about:blank', 'Andmed');
-        // w.document.write(JSON.stringify(formSubmit, null, ' '));
-        // w.document.close();
-
+    }).on("change", "#affirmation input[type='checkbox']", function() {
+        var affirmation = $('#affirmation');
+        affirmation.removeClass('error');
+        affirmation.find('.error-message').first().hide();
 
     });
 });
@@ -261,9 +267,6 @@ function checkRequired(field) {
     if (field.val() === '') {
         field.parent().addClass("error");
         field.parent().find(".error-message").text("Kohustuslik").show();
-    } else {
-        field.parent().removeClass("error");
-        field.parent().find(".error-message").hide();
     }
 }
 
