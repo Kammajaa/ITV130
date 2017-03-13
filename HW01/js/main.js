@@ -268,7 +268,7 @@ $(function () {
             };
             formSubmit.culprit.push(witness);
         });
-        var error = $('.error');
+        var error = $('.error, .contains-error');
 
         if (error.length === 0) {
             body.empty();
