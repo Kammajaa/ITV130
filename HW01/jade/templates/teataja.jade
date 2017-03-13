@@ -1,8 +1,9 @@
 .container
     h3.form-title TEATAJA ANDMED
-    .row
+    .row#one-required
         .form-field.col-sm-6
             label Isikukood**
+            label.error-message(style="display: none") Üks kahest täitmata
             input(type="text")#serialNumber.identificationCode
         .form-field.col-sm-6
             label Sünniaeg**

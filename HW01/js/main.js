@@ -209,6 +209,7 @@ $(function () {
         displaySubFormErrorMinimized($(this));
 
     }).on("click", ".submitBtn", function () {
+        checkOneRequired();
         $(".required, .required-date").each(function () {
             checkRequired($(this));
         });
@@ -327,7 +328,11 @@ $(function () {
             $(this).parent().find(".error-message").text("Vigane kuupäev").show();
         }
         displaySubFormErrorMinimized($(this));
-    }).on("focusin", ".validateDate", function() {
+    }).on("focusin", "#serialNumber, #birthDate ", function () {
+        $('#serialNumber').parent().find('.error-message').hide();
+        $('#one-required').removeClass('error');
+    }).on("focusout", "#serialNumber, #birthDate ", function () {
+        checkOneRequired();
 
     });
 });
@@ -336,6 +341,15 @@ function checkRequired(field) {
     if (field.val() === '') {
         field.parent().addClass("error");
         field.parent().find(".error-message").text("Kohustuslik").show();
+    }
+}
+
+function checkOneRequired() {
+    var serialNumber = $('#serialNumber');
+    var birthDate = $('#birthDate');
+    if (serialNumber.val().trim() === '' && birthDate.val().trim() === '') {
+        serialNumber.parent().find('.error-message').show();
+        $('#one-required').addClass('error');
     }
 }
 
