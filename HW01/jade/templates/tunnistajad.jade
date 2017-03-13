@@ -11,7 +11,8 @@
                         input(type="text").identificationCode
                     .sub-field.col-sm-6
                         label Sünniaeg
-                        input.datepicker(type="text").birthDate
+                        label.error-message(style="display: none") Vigane kuupäev
+                        input.datepicker(type="text").birthDate.validateDate
                 .row
                     .sub-field.col-sm-6
                         label Perekonnanimi

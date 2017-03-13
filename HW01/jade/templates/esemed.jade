@@ -28,7 +28,8 @@
                 .row
                     .sub-field.col-sm-6
                         label Kuupäev
-                        input.datepicker(type="text").possessionDate
+                        label.error-message(style="display: none") Vigane kuupäev
+                        input.datepicker(type="text").possessionDate.validateDate
                     .sub-field.col-sm-6
                         label Kellaaeg
                         input(type="text").possessionTime
@@ -38,7 +39,8 @@
                 .row
                     .sub-field.col-sm-6
                         label Kuupäev
-                        input.datepicker(type="text").possessionLeaveDate
+                        label.error-message(style="display: none") Vigane kuupäev
+                        input.datepicker(type="text").possessionLeaveDate.validateDate
                     .sub-field.col-sm-6
                         label Kellaaeg
                         input(type="text").possessionLeaveTime

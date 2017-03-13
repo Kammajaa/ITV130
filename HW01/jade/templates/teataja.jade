@@ -6,7 +6,8 @@
             input(type="text")#serialNumber.identificationCode
         .form-field.col-sm-6
             label Sünniaeg**
-            input.datepicker(type="text")#birthDate.birthDate
+            label.error-message(style="display: none") Vigane kuupäev
+            input.datepicker(type="text")#birthDate.birthDate.validateDate
     .row
         .form-field.col-sm-6
             label Perekonnanimi*
@@ -20,7 +21,7 @@
         .form-field.col-sm-6
             label Kodakondsus
             select#personNationality
-                option -- valige kodakontsus --
+                option -- valige kodakondsus --
                 option Eesti
                 option Soome
                 option Läti

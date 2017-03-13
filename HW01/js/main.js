@@ -12,8 +12,8 @@ $(function () {
     function updateSubRegions(country) {
         $("#eventCounty").html("<option default>-- valige maakond --</option>");
 
-        $.each(counties[country], function(key, value) {
-            $("#eventCounty").append("<option>"+ value +"</option>");
+        $.each(counties[country], function (key, value) {
+            $("#eventCounty").append("<option>" + value + "</option>");
         });
 
     }
@@ -37,14 +37,14 @@ $(function () {
     }
 
     function displaySubFormErrorMinimized(element) {
-        if(element.parents(".sub-form").has(".error").length > 0) {
+        if (element.parents(".sub-form").has(".error").length > 0) {
             element.parents(".sub-form").addClass("contains-error");
         } else {
             element.parents(".sub-form").removeClass("contains-error");
         }
     }
 
-    $("#eventCountry").on("change", function() {
+    $("#eventCountry").on("change", function () {
         updateSubRegions($(this).val());
     });
 
@@ -52,8 +52,8 @@ $(function () {
         updateCheckbox($(this));
     });
 
-    $(".message").on("click", function() {
-        if($(this).parent().hasClass("open")) {
+    $(".message").on("click", function () {
+        if ($(this).parent().hasClass("open")) {
             $(this).parent().removeClass("open");
         } else {
             $(this).parent().addClass("open");
@@ -67,8 +67,8 @@ $(function () {
                 var topVal = $(this).offset().top - 10;
                 var leftVal = "10%";
 
-                if($(window).width() > 600) {
-                    leftVal = "calc(6% + "+ ($(this).offset().left / 2) +"px)";
+                if ($(window).width() > 600) {
+                    leftVal = "calc(6% + " + ($(this).offset().left / 2) + "px)";
                 }
                 setTimeout(function () {
                     inst.dpDiv.css({
@@ -81,6 +81,7 @@ $(function () {
                 if ($(this).hasClass("required-date") && $(this).val().trim() === "") {
                     $(this).parent().addClass("error");
                     $(this).parent().find(".error-message").show();
+                    $(this).parent().find(".error-message").text("Kohustuslik").show();
                 } else {
                     $(this).parent().removeClass("error");
                     $(this).parent().find(".error-message").hide();
@@ -140,7 +141,7 @@ $(function () {
         var serialNumber = $(this).val();
         var parent = $(this).closest('.subForm, .container');
         if (serialNumber.length === 11) {
-            $.get("http://kristjan.tk:8081/" + serialNumber, function (data) {
+            $.get("https://avaldus.tk/id/" + serialNumber, function (data) {
             }).done(function (data) {
                 var firstName = parent.find('.lastName').first();
                 var lastName = parent.find('.firstName').first();
@@ -164,7 +165,10 @@ $(function () {
             });
             var yearPref = 19;
             if (serialNumber.substr(0, 1) === '5' || serialNumber.substr(0, 1) === '6') yearPref++;
-            parent.find('.birthDate').first().val(serialNumber.substr(5, 2) + "." + serialNumber.substr(3, 2) + "." + yearPref + serialNumber.substr(1, 2));
+            var birthDate = parent.find('.birthDate').first();
+            if (birthDate.val().trim() === '') {
+                birthDate.val(serialNumber.substr(5, 2) + "." + serialNumber.substr(3, 2) + "." + yearPref + serialNumber.substr(1, 2));
+            }
 
         }
     }).on("focusout", ".email", function () {
@@ -178,7 +182,7 @@ $(function () {
                 $(this).parent().find(".error-message").hide();
             }
         } else {
-            if(!$(this).hasClass("required")) {
+            if (!$(this).hasClass("required")) {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
@@ -196,7 +200,7 @@ $(function () {
                 $(this).parent().find(".error-message").hide();
             }
         } else {
-            if(!$(this).hasClass("required")) {
+            if (!$(this).hasClass("required")) {
                 $(this).parent().removeClass("error");
                 $(this).parent().find(".error-message").hide();
             }
@@ -307,10 +311,23 @@ $(function () {
             });
         }
 
-    }).on("change", "#affirmation input[type='checkbox']", function() {
+    }).on("change", "#affirmation input[type='checkbox']", function () {
         var affirmation = $('#affirmation');
         affirmation.removeClass('error');
         affirmation.find('.error-message').first().hide();
+
+    }).on("focusout", ".validateDate", function () {
+        var dateStr = $(this).val().trim();
+        var testdate;
+        try {
+            testdate = $.datepicker.parseDate('dd.mm.yy', dateStr);
+        } catch (e) {
+            $(this).parent().addClass('error');
+            $(this).parent().find('.error-message').show();
+            $(this).parent().find(".error-message").text("Vigane kuupäev").show();
+        }
+        displaySubFormErrorMinimized($(this));
+    }).on("focusin", ".validateDate", function() {
 
     });
 });
