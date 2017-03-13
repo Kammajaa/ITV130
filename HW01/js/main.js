@@ -277,6 +277,9 @@ $(function () {
             body.animate({
                 scrollTop: error.offset().top - 125
             });
+            $('html').animate({
+                scrollTop: error.offset().top - 125
+            });
         }
 
     }).on("change", "#affirmation input[type='checkbox']", function() {
