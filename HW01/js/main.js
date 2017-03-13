@@ -2,6 +2,22 @@ var toClose = null;
 
 $(function () {
 
+    var counties = {
+        et: ["Harjumaa", "Läänemaa", "Ida-Virumaa", "Lääne-Virumaa"],
+        fn: ["Lapland", "Kainuu", "Satakunta", "Satakunta"],
+        lt: ["Kurzeme", "Zemgale", "Vidzeme", "Latgale"],
+        lv: ["Šiauliai", "Kaunas", "Klaipėda", "Utena"]
+    }
+
+    function updateSubRegions(country) {
+        $("#eventCounty").html("<option default>-- valige maakond --</option>");
+
+        $.each(counties[country], function(key, value) {
+            $("#eventCounty").append("<option>"+ value +"</option>");
+        });
+
+    }
+
     function validateEmail($email) {
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         return emailReg.test($email);
@@ -27,6 +43,10 @@ $(function () {
             element.parents(".sub-form").removeClass("contains-error");
         }
     }
+
+    $("#eventCountry").on("change", function() {
+        updateSubRegions($(this).val());
+    });
 
     $("input[type='checkbox']").each(function () {
         updateCheckbox($(this));
