@@ -43,6 +43,15 @@ $(function () {
     $("body").on("focus", ".datepicker", function () {
         $(this).datepicker({
             dateFormat: "d.mm.yy",
+            beforeShow: function (input, inst) {
+                var topVal = $(this).offset().top - 10;
+                setTimeout(function () {
+                    inst.dpDiv.css({
+                        top: topVal + "px",
+                        left: "10%"
+                    });
+                }, 0);
+            },
             onClose: function () {
                 if ($(this).hasClass("required-date") && $(this).val().trim() === "") {
                     $(this).parent().addClass("error");
