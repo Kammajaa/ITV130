@@ -20,6 +20,14 @@ $(function () {
         }
     }
 
+    function displaySubFormErrorMinimized(element) {
+        if(element.parents(".sub-form").has(".error").length > 0) {
+            element.parents(".sub-form").addClass("contains-error");
+        } else {
+            element.parents(".sub-form").removeClass("contains-error");
+        }
+    }
+
     $("input[type='checkbox']").each(function () {
         updateCheckbox($(this));
     });
@@ -129,6 +137,7 @@ $(function () {
         if ($(this).val().trim() !== "") {
             if (!validateEmail($(this).val().trim())) {
                 $(this).parent().addClass("error");
+                //$(this).parents(".sub-form").addClass("container-error");
                 $(this).parent().find(".error-message").text("Vigane e-mail").show();
             } else {
                 $(this).parent().removeClass("error");
@@ -140,6 +149,9 @@ $(function () {
                 $(this).parent().find(".error-message").hide();
             }
         }
+
+        displaySubFormErrorMinimized($(this));
+
     }).on("focusout", ".phone-nr", function () {
         if ($(this).val().trim() !== "") {
             if (!validatePhone($(this).val().trim())) {
@@ -155,6 +167,9 @@ $(function () {
                 $(this).parent().find(".error-message").hide();
             }
         }
+
+        displaySubFormErrorMinimized($(this));
+
     }).on("click", ".submitBtn", function () {
         $(".required, .required-date").each(function () {
             checkRequired($(this));
@@ -225,7 +240,7 @@ $(function () {
                 country: $(this).find('.country').first().val(),
                 address: $(this).find('.address').first().val().trim(),
                 eMail: $(this).find('.eMail').first().val().trim(),
-                phone: $(this).find('.phone').first().val().trim
+                phone: $(this).find('.phone').first().val().trim()
             };
             formSubmit.culprit.push(culprit);
         });
@@ -240,7 +255,7 @@ $(function () {
                 country: $(this).find('.country').first().val(),
                 address: $(this).find('.address').first().val().trim(),
                 eMail: $(this).find('.eMail').first().val().trim(),
-                phone: $(this).find('.phone').first().val().trim
+                phone: $(this).find('.phone').first().val().trim()
             };
             formSubmit.culprit.push(witness);
         });
