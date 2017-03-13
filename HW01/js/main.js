@@ -45,10 +45,15 @@ $(function () {
             dateFormat: "d.mm.yy",
             beforeShow: function (input, inst) {
                 var topVal = $(this).offset().top - 10;
+                var leftVal = "10%";
+
+                if($(window).width() > 600) {
+                    leftVal = "calc(6% + "+ ($(this).offset().left / 2) +"px)";
+                }
                 setTimeout(function () {
                     inst.dpDiv.css({
                         top: topVal + "px",
-                        left: "10%"
+                        left: leftVal
                     });
                 }, 0);
             },
