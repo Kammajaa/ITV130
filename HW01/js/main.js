@@ -333,6 +333,9 @@ $(function () {
             $(this).parent().find(".error-message").text("Vigane kuupäev").show();
         }
         displaySubFormErrorMinimized($(this));
+    }).on("input", ".validateDate", function() {
+        $(this).parent().removeClass('error');
+        $(this).parent().find('.error-message').hide();
     }).on("focusin", "#serialNumber, #birthDate ", function () {
         $('#serialNumber').parent().find('.error-message').hide();
         $('#one-required').removeClass('error');

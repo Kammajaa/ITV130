@@ -12,7 +12,7 @@
                     .sub-field.col-sm-6
                         label Sünniaeg
                         label.error-message(style="display: none") Vigane kuupäev
-                        input.datepicker(type="text").birthDate.validateDate
+                        input(type="text" placeholder="pp.kk.aaaa").birthDate.validateDate
                 .row
                     .sub-field.col-sm-6
                         label Perekonnanimi
@@ -24,14 +24,14 @@
                     .sub-field.col-sm-6
                         label Kodakondsus
                         select.nationality
-                            option(default) -- valige kodakontsus --
+                            option(default) -- valige kodakondsus --
                             option Eesti
                             option Soome
                             option Läti
                             option Leedu
 
                     .sub-field.col-sm-6
-                        label Riik*
+                        label Elukoha riik*
                         select.country
                             option(default) Eesti
                             option Soome

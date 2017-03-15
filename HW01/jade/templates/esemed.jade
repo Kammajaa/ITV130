@@ -12,13 +12,12 @@
                 .row
                     .sub-field.col-sm-6
                         label Soetamise aasta
-                        input(type="text").acquisitionYear
-                    .sub-field.col-sm-5
+                        input(type="text" ).acquisitionYear
+                    .sub-field.col-sm-6
                         label Ligikaudne hetkeväärtus
                         label.error-message(style="display: none") Vigane number!
-                        input(type="text").currentValue.number
-                    .sub-field.col-sm-1
-                        span(style="margin-top: 30px") €
+                        input(type="text" style="width: 95%").currentValue.number
+                        |  €
                 .row
                     .sub-field.col-sm-12.inLockedRoom
                         include checkbox
@@ -30,7 +29,7 @@
                     .sub-field.col-sm-6
                         label Kuupäev
                         label.error-message(style="display: none") Vigane kuupäev
-                        input.datepicker(type="text").possessionDate.validateDate
+                        input.datepicker(type="text" placeholder="pp.kk.aaaa").possessionDate.validateDate
                     .sub-field.col-sm-6
                         label Kellaaeg
                         input(type="text").possessionTime
@@ -41,7 +40,7 @@
                     .sub-field.col-sm-6
                         label Kuupäev
                         label.error-message(style="display: none") Vigane kuupäev
-                        input.datepicker(type="text").possessionLeaveDate.validateDate
+                        input.datepicker(type="text" placeholder="pp.kk.aaaa").possessionLeaveDate.validateDate
                     .sub-field.col-sm-6
                         label Kellaaeg
                         input(type="text").possessionLeaveTime
