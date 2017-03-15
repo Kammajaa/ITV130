@@ -15,7 +15,8 @@
                         input(type="text").acquisitionYear
                     .sub-field.col-sm-5
                         label Ligikaudne hetkeväärtus
-                        input(type="text").currentValue
+                        label.error-message(style="display: none") Vigane number!
+                        input(type="text").currentValue.number
                     .sub-field.col-sm-1
                         span(style="margin-top: 30px") €
                 .row

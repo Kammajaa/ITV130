@@ -28,6 +28,11 @@ $(function () {
         return phoneReg.test($phone);
     }
 
+    function validateNumber($number) {
+        var numberReg = /^([0-9]*([.,])?[0-9]+)$/;
+        return numberReg.test($number);
+    }
+
     function updateCheckbox(checkbox) {
         if (checkbox.is(':checked')) {
             checkbox.parent().addClass("checked");
@@ -334,6 +339,24 @@ $(function () {
     }).on("focusout", "#serialNumber, #birthDate ", function () {
         checkOneRequired();
 
+    }).on("focusout", ".number", function() {
+        if ($(this).val().trim() !== "") {
+            if (!validateNumber($(this).val().trim())) {
+                $(this).parent().addClass("error");
+                $(this).parent().find(".error-message").text("Vigane number!").show();
+            } else {
+                $(this).parent().removeClass("error");
+                $(this).parent().find(".error-message").hide();
+            }
+        }
+
+        displaySubFormErrorMinimized($(this));
+    }).on("input", ".number", function() {
+        $(this).parent().removeClass("error");
+        $(this).parent().find(".error-message").hide();
+    }).on("input", ".email", function() {
+        $(this).parent().removeClass("error");
+        $(this).parent().find(".error-message").hide();
     });
 });
 
