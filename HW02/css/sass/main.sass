@@ -1,0 +1,78 @@
+body
+    .clear-fix
+        clear: both
+
+    .machine
+        float: left
+        border: solid 5px rgb(255, 189, 111)
+        border-radius: 20px
+        background-color: rgb(251, 230, 121)
+        height: 600px
+        width: 550px
+        margin: 250px 0 0 400px
+
+        .slot
+            border: solid 5px rgb(255, 189, 111)
+            background-color: white
+            border-radius: 10px
+            width: 150px
+            height: 250px
+            float: left
+            margin: 50px 10px 0
+            overflow: hidden
+            position: relative
+
+            img
+                position: absolute
+                width: 120px
+                left: 15px
+                transition: top 1s ease-in-out
+
+        .cash
+            border-radius: 10px
+            border: solid 1px rgb(89, 89, 89)
+            background-color: rgb(104, 104, 104)
+            height: 150px
+            width: 400px
+            margin: 50px auto
+            position: relative
+            overflow: hidden
+
+            .bottom
+                position: absolute
+                bottom: 0px
+                left: 0
+                right: 0
+                border-bottom: 40px solid white
+                border-left: 50px solid rgba(180, 12, 215, 0)
+                border-right: 50px solid rgba(180, 12, 215, 0)
+                height: 0
+
+    .handle
+        border: solid 1px rgb(149, 149, 149)
+        background-color: #aaa
+        border-radius: 5px
+        margin-top: 500px
+        width: 80px
+        height: 120px
+        float: left
+        position: relative
+
+        .leaver
+            border: solid 1px rgb(149, 149, 149)
+            height: 300px
+            width: 30px
+            background-color: #aaa
+            position: absolute
+            top: -300px
+            left: 24px
+
+        .nob
+            border: solid 1px rgb(167, 0, 0)
+            position: absolute
+            top: -350px
+            left: -9px
+            border-radius: 50%
+            background-color: rgb(209, 4, 4)
+            width: 100px
+            height: 100px

@@ -1,0 +1,71 @@
+body .clear-fix {
+  clear: both; }
+body .machine {
+  float: left;
+  border: solid 5px #ffbd6f;
+  border-radius: 20px;
+  background-color: #fbe679;
+  height: 600px;
+  width: 550px;
+  margin: 250px 0 0 400px; }
+  body .machine .slot {
+    border: solid 5px #ffbd6f;
+    background-color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 250px;
+    float: left;
+    margin: 50px 10px 0;
+    overflow: hidden;
+    position: relative; }
+    body .machine .slot img {
+      position: absolute;
+      width: 120px;
+      left: 15px;
+      transition: top 1s ease-in-out; }
+  body .machine .cash {
+    border-radius: 10px;
+    border: solid 1px #595959;
+    background-color: #686868;
+    height: 150px;
+    width: 400px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden; }
+    body .machine .cash .bottom {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      border-bottom: 40px solid white;
+      border-left: 50px solid rgba(180, 12, 215, 0);
+      border-right: 50px solid rgba(180, 12, 215, 0);
+      height: 0; }
+body .handle {
+  border: solid 1px #959595;
+  background-color: #aaa;
+  border-radius: 5px;
+  margin-top: 500px;
+  width: 80px;
+  height: 120px;
+  float: left;
+  position: relative; }
+  body .handle .leaver {
+    border: solid 1px #959595;
+    height: 300px;
+    width: 30px;
+    background-color: #aaa;
+    position: absolute;
+    top: -300px;
+    left: 24px; }
+  body .handle .nob {
+    border: solid 1px #a70000;
+    position: absolute;
+    top: -350px;
+    left: -9px;
+    border-radius: 50%;
+    background-color: #d10404;
+    width: 100px;
+    height: 100px; }
+
+/*# sourceMappingURL=main.css.map */
