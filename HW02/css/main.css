@@ -18,12 +18,21 @@ body .machine {
     float: left;
     margin: 50px 10px 0;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    display: block; }
     body .machine .slot img {
       position: absolute;
       width: 120px;
       left: 15px;
       transition: top 1s ease-in-out; }
+    body .machine .slot div {
+      width: 150px;
+      height: 120px;
+      padding-bottom: 10px;
+      padding-top: 10px; }
+    body .machine .slot .slotMachineContainer {
+      padding-top: 60px;
+      padding-bottom: 60px; }
   body .machine .cash {
     border-radius: 10px;
     border: solid 1px #595959;
