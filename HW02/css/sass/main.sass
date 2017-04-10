@@ -1,3 +1,118 @@
+@mixin flip-animation1($x, $nr)
+    @-webkit-keyframes falling#{$nr}
+        0%
+            opacity: 0
+            transform: translate3d($x, -20px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        10%
+            opacity: .1
+            transform: translate3d($x, 50px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        18%
+            opacity: 1
+            transform: translate3d(calc(#{$x} - 10px), 100px, 0) rotate(10deg) rotateX(10deg) rotateY(0deg)
+        58%
+            transform: translate3d(calc(#{$x}- 80px), 40px, 0) rotate(20deg) rotateX(15deg) rotateY(0deg)
+        62%
+            transform: translate3d(calc(#{$x} - 85px) 42px, 0) rotate(30deg) rotateX(20deg) rotateY(0deg)
+        66%
+            transform: translate3d(calc(#{$x} - 90px), 44px, 0) rotate(40deg) rotateX(20deg) rotateY(0deg)
+        70%
+            transform: translate3d(calc(#{$x} - 95px), 46px, 0) rotate(50deg) rotateX(25deg) rotateY(0deg)
+        74%
+            opacity: 1
+            transform: translate3d(calc(#{$x} - 100px), 48px, 0) rotate(60deg) rotateX(30deg) rotateY(0deg)
+        78%
+            opacity: .9
+            transform: translate3d(calc(#{$x} - 105px), 50px, 0) rotate(70deg) rotateX(35deg) rotateY(0deg)
+        82%
+            opacity: .8
+            transform: translate3d(calc(#{$x} - 110px), 52px, 0) rotate(70deg) rotateX(35deg) rotateY(0deg)
+        86%
+            opacity: .7
+            transform: translate3d(calc(#{$x} - 115px), 54px, 0) rotate(70deg) rotateX(35deg) rotateY(0deg)
+        90%
+            opacity: .5
+            transform: translate3d(calc(#{$x} - 120px), 60px, 0) rotate(80deg) rotateX(40deg) rotateY(0deg)
+        100%
+            opacity: 0
+            transform: translate3d(calc(#{$x} - 125px), 65px, 0) rotate(90deg) rotateX(0deg) rotateY(0deg)
+
+@mixin flip-animation2($x, $nr)
+    @-webkit-keyframes falling#{$nr}
+        0%
+            opacity: 0
+            transform: translate3d($x, -20px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        10%
+            opacity: .1
+            transform: translate3d($x, 50px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        18%
+            opacity: 1
+            transform: translate3d($x, 100px, 0) rotate(10deg) rotateX(10deg) rotateY(10deg)
+        58%
+            transform: translate3d($x, 40px, 0) rotate(20deg) rotateX(15deg) rotateY(20deg)
+        62%
+            transform: translate3d($x, 45px, 0) rotate(30deg) rotateX(20deg) rotateY(22deg)
+        66%
+            transform: translate3d($x, 50px, 0) rotate(40deg) rotateX(20deg) rotateY(22deg)
+        70%
+            transform: translate3d($x, 55px, 0) rotate(50deg) rotateX(25deg) rotateY(25deg)
+        74%
+            opacity: 1
+            transform: translate3d($x, 60px, 0) rotate(60deg) rotateX(30deg) rotateY(25deg)
+        78%
+            opacity: .9
+            transform: translate3d($x, 70px, 0) rotate(70deg) rotateX(35deg) rotateY(28deg)
+        82%
+            opacity: .8
+            transform: translate3d($x, 80px, 0) rotate(70deg) rotateX(35deg) rotateY(30deg)
+        86%
+            opacity: .7
+            transform: translate3d($x, 90px, 0) rotate(70deg) rotateX(35deg) rotateY(40deg)
+        90%
+            opacity: .5
+            transform: translate3d($x, 110px, 0) rotate(80deg) rotateX(40deg) rotateY(50deg)
+        100%
+            opacity: 0
+            transform: translate3d($x, 120px, 0) rotate(90deg) rotateX(0deg) rotateY(60deg)
+
+@mixin flip-animation3($x, $nr)
+    @-webkit-keyframes falling#{$nr}
+        0%
+            opacity: 0
+            transform: translate3d($x, -20px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        10%
+            opacity: .1
+            transform: translate3d($x, 50px, 0) rotate(0deg) rotateX(0deg) rotateY(0deg)
+        18%
+            opacity: 1
+            transform: translate3d(calc(#{$x} + 10px), 100px, 0) rotate(10deg) rotateX(10deg) rotateY(0deg)
+        58%
+            transform: translate3d(calc(#{$x} + 40px), 40px, 0) rotate(20deg) rotateX(15deg) rotateY(5deg)
+        62%
+            transform: translate3d(calc(#{$x} + 45px) 42px, 0) rotate(30deg) rotateX(20deg) rotateY(7deg)
+        66%
+            transform: translate3d(calc(#{$x} + 50px), 44px, 0) rotate(40deg) rotateX(20deg) rotateY(9deg)
+        70%
+            transform: translate3d(calc(#{$x} + 55px), 46px, 0) rotate(50deg) rotateX(25deg) rotateY(11deg)
+        74%
+            opacity: 1
+            transform: translate3d(calc(#{$x} + 60px), 48px, 0) rotate(60deg) rotateX(30deg) rotateY(15deg)
+        78%
+            opacity: .9
+            transform: translate3d(calc(#{$x} + 65px), 50px, 0) rotate(70deg) rotateX(35deg) rotateY(20deg)
+        82%
+            opacity: .8
+            transform: translate3d(calc(#{$x} + 70px), 52px, 0) rotate(70deg) rotateX(35deg) rotateY(22deg)
+        86%
+            opacity: .7
+            transform: translate3d(calc(#{$x} + 75px), 54px, 0) rotate(70deg) rotateX(35deg) rotateY(25deg)
+        90%
+            opacity: .5
+            transform: translate3d(calc(#{$x} + 90px), 60px, 0) rotate(80deg) rotateX(40deg) rotateY(30deg)
+        100%
+            opacity: 0
+            transform: translate3d(calc(#{$x} + 95px), 65px, 0) rotate(90deg) rotateX(0deg) rotateY(30deg)
+
+
 body
     .clear-fix
         clear: both
@@ -10,6 +125,7 @@ body
         height: 600px
         width: 550px
         margin: 250px 0 0 400px
+        z-index: 50
 
         .slot
             border: solid 5px rgb(255, 189, 111)
@@ -34,16 +150,15 @@ body
             background-color: rgb(104, 104, 104)
             height: 150px
             width: 400px
-            margin: 50px auto
+            margin: 65px auto
             position: relative
-            overflow: hidden
 
             .bottom
                 position: absolute
                 bottom: 0px
                 left: 0
                 right: 0
-                border-bottom: 40px solid white
+                border-bottom: 30px solid white
                 border-left: 50px solid rgba(180, 12, 215, 0)
                 border-right: 50px solid rgba(180, 12, 215, 0)
                 height: 0
@@ -60,6 +175,7 @@ body
 
         .leaver
             border: solid 1px rgb(149, 149, 149)
+            border-radius: 5px
             height: 300px
             width: 30px
             background-color: #aaa
@@ -76,3 +192,41 @@ body
             background-color: rgb(209, 4, 4)
             width: 100px
             height: 100px
+
+    .coin
+        position: absolute
+        opacity: 0
+        clear: both
+        color: rgb(224, 182, 31)
+        text-align: center
+        line-height: .9em
+        z-index: 99
+        font:
+            size: 2em
+            weight: bold
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        border: solid 3px rgb(224, 182, 31)
+        background-color: rgb(236, 210, 33)
+
+    @for $i from 1 through 15
+        .coin:nth-child(#{$i})
+            animation: falling#{$i} 1s calc(#{$i} * .2s) linear infinite
+
+    @for $i from 16 through 22
+        .coin:nth-child(#{$i})
+            animation: falling#{$i} 1s calc(#{$i} * .1s) linear infinite
+
+    @for $i from 26 through 36
+        .coin:nth-child(#{$i})
+            animation: falling#{$i} 1s calc(#{$i} * .15s) linear infinite
+
+@for $i from 1 through 15
+    @include flip-animation1(calc(30px + #{$i} * 20px), $i)
+
+@for $i from 16 through 25
+    @include flip-animation2(calc(960px - #{$i} * 40px), $i)
+
+@for $i from 26 through 36
+    @include flip-animation3(calc(860px - (#{$i} % 20) * 20px), $i)
