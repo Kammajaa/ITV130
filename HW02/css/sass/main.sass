@@ -212,15 +212,15 @@ body
 
     @for $i from 1 through 15
         .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .2s) linear infinite
+            animation: falling#{$i} 1s calc(#{$i} * .2s) linear 20
 
     @for $i from 16 through 22
         .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .1s) linear infinite
+            animation: falling#{$i} 1s calc(#{$i} * .1s) linear 20
 
     @for $i from 26 through 36
         .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .15s) linear infinite
+            animation: falling#{$i} 1s calc(#{$i} * .15s) linear 17
 
 @for $i from 1 through 15
     @include flip-animation1(calc(30px + #{$i} * 20px), $i)
