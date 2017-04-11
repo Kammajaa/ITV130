@@ -1,7 +1,12 @@
 var m1, m2, m3;
 
 function startCoinAnimation() {
-    $(".coin").toggleClass("animated");
+    $(".coin").removeClass("animated");
+    $(".coin").addClass("animated");
+}
+
+function stopCoinAnimation() {
+    $(".coin").removeClass("animated");
 }
 
 function pullLeaver() {
@@ -10,11 +15,6 @@ function pullLeaver() {
     $(".leaver").addClass("pull");
     $(".nob").addClass("pull");
 }
-
-//See tuleks hiljem eemaldata koos nupuga.
-$(".startAnime").click(function() {
-    startCoinAnimation();
-});
 
 $(function() {
 
