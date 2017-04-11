@@ -26,12 +26,6 @@ $(function() {
         m3.shuffle(1);
     });
 
-
-    $(".jou").click(function() {
-        $("#winSound").play();
-        $(".jou").hide()
-    });
-
 });
 
 
