@@ -107,7 +107,7 @@
             transform: translate3d(calc(#{$x} + 75px), 54px, 0) rotate(70deg) rotateX(35deg) rotateY(25deg)
         90%
             opacity: .5
-            transform: translate3d(calc(#{$x} + 90px), 60px, 0) rotate(80deg) rotateX(40deg) rotateY(30deg)
+            transform: translate3d(calc(#{$x} + 80px), 60px, 0) rotate(80deg) rotateX(40deg) rotateY(30deg)
         100%
             opacity: 0
             transform: translate3d(calc(#{$x} + 95px), 65px, 0) rotate(90deg) rotateX(0deg) rotateY(30deg)
@@ -167,6 +167,7 @@ body
             position: relative
 
             .bottom
+                border-radius: 8px
                 position: absolute
                 bottom: 0px
                 left: 0
@@ -224,16 +225,22 @@ body
         background-color: rgb(236, 210, 33)
 
     @for $i from 1 through 15
-        .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .2s) linear 20
+        .coin.animated:nth-child(#{$i})
+            animation: falling#{$i} 1s linear 20
+            -webkit-animation-delay: #{$i * .2}s
+            -moz-animation-delay: #{$i * .2}s
 
     @for $i from 16 through 22
-        .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .1s) linear 20
+        .coin.animated:nth-child(#{$i})
+            animation: falling#{$i} 1s linear 20
+            -webkit-animation-delay: #{$i * .1}s
+            -moz-animation-delay: #{$i * .1}s
 
     @for $i from 26 through 36
-        .coin:nth-child(#{$i})
-            animation: falling#{$i} 1s calc(#{$i} * .15s) linear 17
+        .coin.animated:nth-child(#{$i})
+            animation: falling#{$i} 1s linear 17
+            -webkit-animation-delay: #{$i * .15}s
+            -moz-animation-delay: #{$i * .15}s
 
 @for $i from 1 through 15
     @include flip-animation1(calc(30px + #{$i} * 20px), $i)
@@ -242,4 +249,4 @@ body
     @include flip-animation2(calc(960px - #{$i} * 40px), $i)
 
 @for $i from 26 through 36
-    @include flip-animation3(calc(860px - (#{$i} % 20) * 20px), $i)
+    @include flip-animation3(calc(800px - #{$i} * 20px), $i)

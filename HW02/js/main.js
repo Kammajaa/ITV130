@@ -1,7 +1,15 @@
 var m1, m2, m3;
 
-$(function() {
+function startCoinAnimation() {
+    $(".coin").toggleClass("animated");
+}
 
+//See tuleks hiljem eemaldata koos nupuga.
+$(".startAnime").click(function() {
+    startCoinAnimation();
+});
+
+$(function() {
 
     m1 = $('#slot1').slotMachine({
         active: 4,
@@ -27,7 +35,6 @@ $(function() {
     });
 
 });
-
 
 function playWinSound() {
     document.getElementById("winSound").play();
