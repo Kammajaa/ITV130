@@ -1,7 +1,6 @@
 var m1, m2, m3;
 
 function startCoinAnimation() {
-    $(".coin").removeClass("animated");
     $(".coin").addClass("animated");
 }
 
@@ -10,10 +9,12 @@ function stopCoinAnimation() {
 }
 
 function pullLeaver() {
-    $(".leaver").removeClass("pull");
-    $(".nob").removeClass("pull");
     $(".leaver").addClass("pull");
     $(".nob").addClass("pull");
+    setTimeout(function() {
+        $(".leaver").removeClass("pull");
+        $(".nob").removeClass("pull");
+    }, 1000);
 }
 
 $(function() {
@@ -45,6 +46,8 @@ $(function() {
 
 function playWinSound() {
     document.getElementById("winSound").play();
+    playCoinsSound();
+    startCoinAnimation();
 }
 
 function playCoinsSound() {
@@ -56,7 +59,9 @@ function playLossSound() {
 }
 
 function playLeverSound() {
+    stopCoinAnimation();
     document.getElementById("leverSound").play();
+    pullLeaver();
 }
 
 function playSpinSound() {

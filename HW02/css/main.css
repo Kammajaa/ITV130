@@ -81,10 +81,10 @@ body .handle {
     box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.65); }
     body .handle .leaver.pull {
       animation: pull-leaver;
-      animation-duration: 4s;
+      animation-duration: 1s;
       animation-iteration-count: 1;
       -moz-animation: pull-leaver;
-      -moz-animation-duration: 4s;
+      -moz-animation-duration: 1s;
       -moz-animation-iteration-count: 1; }
   body .handle .nob {
     border: solid 1px #a70000;
@@ -97,10 +97,10 @@ body .handle {
     height: 100px; }
     body .handle .nob.pull {
       animation: pull-nob;
-      animation-duration: 4s;
+      animation-duration: 1s;
       animation-iteration-count: 1;
       -moz-animation: pull-nob;
-      -moz-animation-duration: 4s;
+      -moz-animation-duration: 1s;
       -moz-animation-iteration-count: 1; }
 body .coin {
   position: absolute;
@@ -118,135 +118,135 @@ body .coin {
   border: solid 3px #e0b61f;
   background-color: #ecd221; }
 body .coin.animated:nth-child(1) {
-  animation: falling1 1s linear 20;
+  animation: falling1 1s linear 5;
   -webkit-animation-delay: 0.2s;
   -moz-animation-delay: 0.2s; }
 body .coin.animated:nth-child(2) {
-  animation: falling2 1s linear 20;
+  animation: falling2 1s linear 5;
   -webkit-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s; }
 body .coin.animated:nth-child(3) {
-  animation: falling3 1s linear 20;
+  animation: falling3 1s linear 5;
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s; }
 body .coin.animated:nth-child(4) {
-  animation: falling4 1s linear 20;
+  animation: falling4 1s linear 5;
   -webkit-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s; }
 body .coin.animated:nth-child(5) {
-  animation: falling5 1s linear 20;
+  animation: falling5 1s linear 5;
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s; }
 body .coin.animated:nth-child(6) {
-  animation: falling6 1s linear 20;
+  animation: falling6 1s linear 5;
   -webkit-animation-delay: 1.2s;
   -moz-animation-delay: 1.2s; }
 body .coin.animated:nth-child(7) {
-  animation: falling7 1s linear 20;
+  animation: falling7 1s linear 5;
   -webkit-animation-delay: 1.4s;
   -moz-animation-delay: 1.4s; }
 body .coin.animated:nth-child(8) {
-  animation: falling8 1s linear 20;
+  animation: falling8 1s linear 5;
   -webkit-animation-delay: 1.6s;
   -moz-animation-delay: 1.6s; }
 body .coin.animated:nth-child(9) {
-  animation: falling9 1s linear 20;
+  animation: falling9 1s linear 5;
   -webkit-animation-delay: 1.8s;
   -moz-animation-delay: 1.8s; }
 body .coin.animated:nth-child(10) {
-  animation: falling10 1s linear 20;
+  animation: falling10 1s linear 5;
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s; }
 body .coin.animated:nth-child(11) {
-  animation: falling11 1s linear 20;
+  animation: falling11 1s linear 5;
   -webkit-animation-delay: 2.2s;
   -moz-animation-delay: 2.2s; }
 body .coin.animated:nth-child(12) {
-  animation: falling12 1s linear 20;
+  animation: falling12 1s linear 5;
   -webkit-animation-delay: 2.4s;
   -moz-animation-delay: 2.4s; }
 body .coin.animated:nth-child(13) {
-  animation: falling13 1s linear 20;
+  animation: falling13 1s linear 5;
   -webkit-animation-delay: 2.6s;
   -moz-animation-delay: 2.6s; }
 body .coin.animated:nth-child(14) {
-  animation: falling14 1s linear 20;
+  animation: falling14 1s linear 5;
   -webkit-animation-delay: 2.8s;
   -moz-animation-delay: 2.8s; }
 body .coin.animated:nth-child(15) {
-  animation: falling15 1s linear 20;
+  animation: falling15 1s linear 5;
   -webkit-animation-delay: 3s;
   -moz-animation-delay: 3s; }
 body .coin.animated:nth-child(16) {
-  animation: falling16 1s linear 20;
+  animation: falling16 1s linear 5;
   -webkit-animation-delay: 1.6s;
   -moz-animation-delay: 1.6s; }
 body .coin.animated:nth-child(17) {
-  animation: falling17 1s linear 20;
+  animation: falling17 1s linear 5;
   -webkit-animation-delay: 1.7s;
   -moz-animation-delay: 1.7s; }
 body .coin.animated:nth-child(18) {
-  animation: falling18 1s linear 20;
+  animation: falling18 1s linear 5;
   -webkit-animation-delay: 1.8s;
   -moz-animation-delay: 1.8s; }
 body .coin.animated:nth-child(19) {
-  animation: falling19 1s linear 20;
+  animation: falling19 1s linear 5;
   -webkit-animation-delay: 1.9s;
   -moz-animation-delay: 1.9s; }
 body .coin.animated:nth-child(20) {
-  animation: falling20 1s linear 20;
+  animation: falling20 1s linear 5;
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s; }
 body .coin.animated:nth-child(21) {
-  animation: falling21 1s linear 20;
+  animation: falling21 1s linear 5;
   -webkit-animation-delay: 2.1s;
   -moz-animation-delay: 2.1s; }
 body .coin.animated:nth-child(22) {
-  animation: falling22 1s linear 20;
+  animation: falling22 1s linear 5;
   -webkit-animation-delay: 2.2s;
   -moz-animation-delay: 2.2s; }
 body .coin.animated:nth-child(26) {
-  animation: falling26 1s linear 17;
+  animation: falling26 1s linear 3;
   -webkit-animation-delay: 3.9s;
   -moz-animation-delay: 3.9s; }
 body .coin.animated:nth-child(27) {
-  animation: falling27 1s linear 17;
+  animation: falling27 1s linear 3;
   -webkit-animation-delay: 4.05s;
   -moz-animation-delay: 4.05s; }
 body .coin.animated:nth-child(28) {
-  animation: falling28 1s linear 17;
+  animation: falling28 1s linear 3;
   -webkit-animation-delay: 4.2s;
   -moz-animation-delay: 4.2s; }
 body .coin.animated:nth-child(29) {
-  animation: falling29 1s linear 17;
+  animation: falling29 1s linear 3;
   -webkit-animation-delay: 4.35s;
   -moz-animation-delay: 4.35s; }
 body .coin.animated:nth-child(30) {
-  animation: falling30 1s linear 17;
+  animation: falling30 1s linear 3;
   -webkit-animation-delay: 4.5s;
   -moz-animation-delay: 4.5s; }
 body .coin.animated:nth-child(31) {
-  animation: falling31 1s linear 17;
+  animation: falling31 1s linear 3;
   -webkit-animation-delay: 4.65s;
   -moz-animation-delay: 4.65s; }
 body .coin.animated:nth-child(32) {
-  animation: falling32 1s linear 17;
+  animation: falling32 1s linear 3;
   -webkit-animation-delay: 4.8s;
   -moz-animation-delay: 4.8s; }
 body .coin.animated:nth-child(33) {
-  animation: falling33 1s linear 17;
+  animation: falling33 1s linear 3;
   -webkit-animation-delay: 4.95s;
   -moz-animation-delay: 4.95s; }
 body .coin.animated:nth-child(34) {
-  animation: falling34 1s linear 17;
+  animation: falling34 1s linear 3;
   -webkit-animation-delay: 5.1s;
   -moz-animation-delay: 5.1s; }
 body .coin.animated:nth-child(35) {
-  animation: falling35 1s linear 17;
+  animation: falling35 1s linear 3;
   -webkit-animation-delay: 5.25s;
   -moz-animation-delay: 5.25s; }
 body .coin.animated:nth-child(36) {
-  animation: falling36 1s linear 17;
+  animation: falling36 1s linear 3;
   -webkit-animation-delay: 5.4s;
   -moz-animation-delay: 5.4s; }
 
