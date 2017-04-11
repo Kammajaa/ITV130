@@ -1,7 +1,9 @@
 var m1, m2, m3;
 
 function startCoinAnimation() {
+    playCoinsSound();
     $(".coin").addClass("animated");
+    playWinSound();
 }
 
 function stopCoinAnimation() {
@@ -9,8 +11,11 @@ function stopCoinAnimation() {
 }
 
 function pullLeaver() {
+    stopCoinAnimation();
     $(".leaver").addClass("pull");
     $(".nob").addClass("pull");
+    playLeverSound();
+
     setTimeout(function() {
         $(".leaver").removeClass("pull");
         $(".nob").removeClass("pull");
@@ -46,8 +51,6 @@ $(function() {
 
 function playWinSound() {
     document.getElementById("winSound").play();
-    playCoinsSound();
-    startCoinAnimation();
 }
 
 function playCoinsSound() {
@@ -59,9 +62,7 @@ function playLossSound() {
 }
 
 function playLeverSound() {
-    stopCoinAnimation();
     document.getElementById("leverSound").play();
-    pullLeaver();
 }
 
 function playSpinSound() {
