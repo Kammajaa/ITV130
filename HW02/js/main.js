@@ -4,6 +4,13 @@ function startCoinAnimation() {
     $(".coin").toggleClass("animated");
 }
 
+function pullLeaver() {
+    $(".leaver").removeClass("pull");
+    $(".nob").removeClass("pull");
+    $(".leaver").addClass("pull");
+    $(".nob").addClass("pull");
+}
+
 //See tuleks hiljem eemaldata koos nupuga.
 $(".startAnime").click(function() {
     startCoinAnimation();
