@@ -1,0 +1,92 @@
+$base-color: orange
+$gradient-color: #ff9d2a
+$shadow-color: rgba(0,0,0,0.75)
+
+body
+    background: #fda100
+    background: -webkit-linear-gradient(top right,$base-color,$gradient-color)
+    background: -o-linear-gradient(top right,$base-color,$gradient-color)
+    background: -moz-linear-gradient(top right, $base-color,$gradient-color)
+    background: linear-gradient(top right, $base-color, $gradient-color)
+
+    .clear
+        clear: both
+
+    button
+        width: 250px
+        height: 70px
+        color: white
+        background-color: #F50057
+        border: none
+        border-radius: 2px
+        display: block
+        margin: 10px auto
+        font:
+            size: 1.5em
+            weight: bold
+        -webkit-box-shadow: 1px 1px 20px 0px $shadow-color
+        -moz-box-shadow: 1px 1px 20px 0px $shadow-color
+        box-shadow: 1px 1px 20px 0px $shadow-color
+
+        &:hover
+            -webkit-box-shadow: 2px 2px 15px 0px $shadow-color
+            -moz-box-shadow: 2px 2px 15px 0px $shadow-color
+            box-shadow: 2px 2px 15px 0px $shadow-color
+
+    .letters
+        max-width: 910px
+        margin: 150px auto 100px
+
+    .letter
+        float: left
+        width: 100px
+        height: 100px
+        font-size: 5em
+        padding: 10px
+        border: solid 1px black
+        background-color: white
+        -webkit-box-shadow: 5px 5px 0px 0px $shadow-color
+        -moz-box-shadow: 5px 5px 0px 0px $shadow-color
+        box-shadow: 5px 5px 0px 0px $shadow-color
+
+    .letter-1
+        @extend .letter
+        margin: 5px 5px 5px -10px
+        transform: rotateZ(7deg)
+
+    .letter-2
+        @extend .letter
+        margin: 5px -15px
+        transform: rotateZ(-12deg)
+
+    .letter-3
+        @extend .letter
+        margin: 5px
+        transform: rotateZ(-2deg)
+
+    .input-block
+        background-color: $shadow-color
+        max-width: 900px
+        height: 300px
+        margin: 50px auto
+        transform: rotateZ(-2deg)
+        position: relative
+
+    #player-text
+        max-width: 700px
+        padding: 10px 20px
+        display: block
+        margin: 50px auto
+        border: none
+        text-align: center
+        color: black
+        font:
+            size: 2em
+            weight: bold
+
+    .background
+        position: absolute
+        width: 99%
+        height: 99%
+        transform: rotateZ(2deg)
+        background-color: white
