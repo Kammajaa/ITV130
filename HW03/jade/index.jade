@@ -7,6 +7,8 @@ html
         link(rel="stylesheet" href="css/main.css")
     
     body
+        
+        button#score Scores
         .letters
             .letter-1 T
             .letter-2 Y
@@ -20,7 +22,9 @@ html
         
         .input-block
             .background
-                input#player-text(type="text")
+                .input-wraper
+                    span#username Username
+                    input#input-username(type="text")
                 button#start Find oponent
 
         script(src="js/functions.js")

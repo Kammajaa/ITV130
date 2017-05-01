@@ -1,6 +1,7 @@
 $base-color: orange
 $gradient-color: #ff9d2a
 $shadow-color: rgba(0,0,0,0.75)
+$color-btn: #F50057
 
 body
     background: #fda100
@@ -13,10 +14,11 @@ body
         clear: both
 
     button
+        cursor: pointer
         width: 250px
         height: 70px
         color: white
-        background-color: #F50057
+        background-color: $color-btn
         border: none
         border-radius: 2px
         display: block
@@ -35,7 +37,10 @@ body
 
     .letters
         max-width: 910px
-        margin: 150px auto 100px
+        margin: 200px auto 100px
+
+        @media(max-width: 905px)
+            padding: 0 50px
 
     .letter
         float: left
@@ -64,25 +69,60 @@ body
         margin: 5px
         transform: rotateZ(-2deg)
 
+    #score
+        position: absolute
+        right: 50px
+        top: 20px
+        display: block
+        height: 40px
+        width: 100px
+        font-size: 1em
+
     .input-block
         background-color: $shadow-color
         max-width: 900px
-        height: 300px
-        margin: 50px auto
+        height: 400px
+        margin: 100px auto 20px
         transform: rotateZ(-2deg)
         position: relative
 
-    #player-text
-        max-width: 700px
-        padding: 10px 20px
-        display: block
-        margin: 50px auto
-        border: none
-        text-align: center
-        color: black
-        font:
-            size: 2em
-            weight: bold
+    .input-wraper
+        max-width: 500px
+        margin: 100px auto 75px
+        position: relative
+
+        #username
+            position: absolute
+            pointer-events: none
+            margin: 25px 0 0 10px
+            font:
+                size: 1.5em
+                weight: bold
+            color: $color-btn
+            opacity: .8
+            transition: margin .2s ease-in-out, font-size .2s ease-in-out
+
+        &.active
+            #username
+                position: absolute
+                margin: -10px 0 0 0
+                font:
+                    size: .9em
+                    weight: bold
+                color: $color-btn
+                opacity: .8
+
+        #input-username
+            width: 100%
+            padding: 10px 20px
+            display: block
+            border: none
+            border-bottom: solid 2px $color-btn
+            background-color: white
+            color: $color-btn
+            font:
+                size: 2em
+                weight: bold
 
     .background
         position: absolute
