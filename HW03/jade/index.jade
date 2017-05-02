@@ -24,7 +24,12 @@ html
             .background
                 .input-wraper
                     span#username Username
-                    input#input-username(type="text")
+                    input#input-username(type="text" maxlength="21")
                 button#start Find oponent
-
+        
+        #search-overlay(hidden)
+            h3 Looking 4 oponent...
+            img(src="img/loading.gif" alt="")
+            button#cancel Cancel
+        
         script(src="js/functions.js")

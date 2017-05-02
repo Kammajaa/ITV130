@@ -4,6 +4,16 @@ $(function() {
     });
 
     $("#input-username").focusout(function() {
-        $(this).parent().removeClass("active");
+        if ($(this).val().trim().length == 0) {
+            $(this).parent().removeClass("active");
+        }
+    });
+
+    $("#start").click(function() {
+        $("#search-overlay").fadeIn();
+    });
+
+    $("#cancel").click(function() {
+        $("#search-overlay").fadeOut();
     });
 });

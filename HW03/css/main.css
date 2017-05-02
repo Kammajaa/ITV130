@@ -61,14 +61,14 @@ body {
     font-size: 1em; }
   body .input-block {
     background-color: rgba(0, 0, 0, 0.75);
-    max-width: 900px;
-    height: 400px;
+    max-width: 800px;
+    height: 380px;
     margin: 100px auto 20px;
     transform: rotateZ(-2deg);
     position: relative; }
   body .input-wraper {
     max-width: 500px;
-    margin: 100px auto 75px;
+    margin: 90px auto 65px;
     position: relative; }
     body .input-wraper #username {
       position: absolute;
@@ -93,14 +93,36 @@ body {
       border: none;
       border-bottom: solid 2px #F50057;
       background-color: white;
-      color: #F50057;
+      color: black;
       font-size: 2em;
       font-weight: bold; }
   body .background {
     position: absolute;
-    width: 99%;
-    height: 99%;
+    width: 98%;
+    height: 98%;
+    margin-left: 1%;
     transform: rotateZ(2deg);
     background-color: white; }
+  body #search-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    opacity: 0.9; }
+    body #search-overlay h3 {
+      color: balck;
+      display: block;
+      text-align: center;
+      text-text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+      max-width: 700px;
+      margin: 100px auto 10px;
+      font-size: 2em;
+      font-weight: bold; }
+    body #search-overlay img {
+      max-width: 600px;
+      display: block;
+      margin: 20px auto 0; }
 
 /*# sourceMappingURL=main.css.map */
