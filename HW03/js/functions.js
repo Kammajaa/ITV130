@@ -9,6 +9,16 @@ $(function() {
         }
     });
 
+    $("#score").click(function() {
+        if ($("#highscore").is(':visible')) {
+            $("#highscore").fadeOut();
+            $("#new-game").fadeIn();            
+        } else {
+            $("#new-game").fadeOut();
+            $("#highscore").fadeIn();
+        }
+    });
+
     $("#start").click(function() {
         $("#search-overlay").fadeIn();
     });

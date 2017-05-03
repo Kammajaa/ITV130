@@ -7,29 +7,9 @@ html
         link(rel="stylesheet" href="css/main.css")
     
     body
-        
         button#score Scores
-        .letters
-            .letter-1 T
-            .letter-2 Y
-            .letter-3 P
-            .letter-1 O
-            .letter-2 N
-            .letter-3 A
-            .letter-1 U
-            .letter-2 T
-            .clear
-        
-        .input-block
-            .background
-                .input-wraper
-                    span#username Username
-                    input#input-username(type="text" maxlength="21")
-                button#start Find oponent
-        
-        #search-overlay(hidden)
-            h3 Looking 4 oponent...
-            img(src="img/loading.gif" alt="")
-            button#cancel Cancel
-        
+        include templates/new-game
+        include templates/search
+        include templates/highscore
+
         script(src="js/functions.js")
