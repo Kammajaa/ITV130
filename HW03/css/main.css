@@ -8,15 +8,15 @@ body {
     clear: both; }
   body button {
     cursor: pointer;
-    width: 250px;
-    height: 70px;
+    width: 200px;
+    height: 50px;
     color: white;
     background-color: #F50057;
     border: none;
     border-radius: 2px;
     display: block;
     margin: 10px auto;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     -webkit-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.75);
@@ -26,15 +26,15 @@ body {
       -moz-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75); }
   body .letters {
-    max-width: 910px;
-    margin: 200px auto 100px; }
+    max-width: 740px;
+    margin: 150px auto 100px; }
 @media(max-width: 905px) {
   body .letters {
     padding: 0 50px; } }
   body .letter, body .letter-1, body .letter-2, body .letter-3 {
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     font-size: 5em;
     padding: 10px;
     border: solid 1px black;
@@ -61,14 +61,14 @@ body {
     font-size: 1em; }
   body .input-block, body #highscore {
     background-color: rgba(0, 0, 0, 0.75);
-    max-width: 800px;
-    height: 380px;
+    max-width: 650px;
+    height: 300px;
     margin: 100px auto 20px;
     transform: rotateZ(-2deg);
     position: relative; }
   body .input-wraper {
-    max-width: 500px;
-    margin: 90px auto 65px;
+    max-width: 450px;
+    margin: 75px auto 50px;
     position: relative; }
     body .input-wraper #username {
       position: absolute;
@@ -94,8 +94,10 @@ body {
       border-bottom: solid 2px #F50057;
       background-color: white;
       color: black;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: bold; }
+      body .input-wraper #input-username:focus {
+        outline: none; }
   body .background {
     position: absolute;
     width: 98%;

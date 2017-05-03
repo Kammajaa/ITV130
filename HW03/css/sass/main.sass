@@ -15,8 +15,8 @@ body
 
     button
         cursor: pointer
-        width: 250px
-        height: 70px
+        width: 200px
+        height: 50px
         color: white
         background-color: $color-btn
         border: none
@@ -24,7 +24,7 @@ body
         display: block
         margin: 10px auto
         font:
-            size: 1.5em
+            size: 1.2em
             weight: bold
         -webkit-box-shadow: 1px 1px 20px 0px $shadow-color
         -moz-box-shadow: 1px 1px 20px 0px $shadow-color
@@ -36,16 +36,16 @@ body
             box-shadow: 2px 2px 15px 0px $shadow-color
 
     .letters
-        max-width: 910px
-        margin: 200px auto 100px
+        max-width: 740px
+        margin: 150px auto 100px
 
         @media(max-width: 905px)
             padding: 0 50px
 
     .letter
         float: left
-        width: 100px
-        height: 100px
+        width: 80px
+        height: 80px
         font-size: 5em
         padding: 10px
         border: solid 1px black
@@ -80,15 +80,15 @@ body
 
     .input-block
         background-color: $shadow-color
-        max-width: 800px
-        height: 380px
+        max-width: 650px
+        height: 300px
         margin: 100px auto 20px
         transform: rotateZ(-2deg)
         position: relative
 
     .input-wraper
-        max-width: 500px
-        margin: 90px auto 65px
+        max-width: 450px
+        margin: 75px auto 50px
         position: relative
 
         #username
@@ -121,8 +121,11 @@ body
             background-color: white
             color: black
             font:
-                size: 2em
+                size: 1.5em
                 weight: bold
+
+            &:focus
+                outline: none
 
     .background
         position: absolute
@@ -170,7 +173,7 @@ body
         bottom: 0
         left: 0
         right: 0
-        
+
         h3
             color: balck
             display: block
