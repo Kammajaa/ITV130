@@ -1,4 +1,6 @@
 $(function() {
+    var username = "";
+
     $("#input-username").focusin(function() {
         $(this).parent().addClass("active");
     });
@@ -11,15 +13,26 @@ $(function() {
 
     $("#score").click(function() {
         if ($("#highscore").is(':visible')) {
-            $("#highscore").fadeOut();
-            $("#new-game").fadeIn();            
+            $("#highscore").hide();
+            $("#new-game").show();
         } else {
-            $("#new-game").fadeOut();
-            $("#highscore").fadeIn();
+            $("#new-game").hide();
+            $("#highscore").show();
         }
     });
 
     $("#start").click(function() {
+        if ($("#input-username").val().trim() == "") {
+            if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
+                $(this).parent().find(".input-wraper").addClass("error").find("span").text("Username mandatory!");
+                setTimeout(function() {
+                    $("#start").parent().find(".input-wraper").removeClass("error");
+                }, 500);
+            }
+
+            return;
+        }
+
         $("#search-overlay").fadeIn();
     });
 

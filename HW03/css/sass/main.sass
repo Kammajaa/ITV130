@@ -39,6 +39,10 @@ body
         max-width: 740px
         margin: 150px auto 100px
 
+        &.small
+            margin: 50px auto
+            width: 500px
+
         @media(max-width: 905px)
             padding: 0 50px
 
@@ -54,6 +58,11 @@ body
         -moz-box-shadow: 5px 5px 0px 0px $shadow-color
         box-shadow: 5px 5px 0px 0px $shadow-color
 
+        &.small
+            height: 50px
+            width: 50px
+            font-size: 3em
+
     .letter-1
         @extend .letter
         margin: 5px 5px 5px -10px
@@ -68,6 +77,13 @@ body
         @extend .letter
         margin: 5px
         transform: rotateZ(-2deg)
+
+    #username-diaply
+        display: block
+        font:
+            size: 1.5em
+            weight: bold
+        color: $color-btn
 
     #score
         position: absolute
@@ -90,6 +106,14 @@ body
         max-width: 450px
         margin: 75px auto 50px
         position: relative
+
+        &.error
+            animation: error
+            animation-duration: .5s
+            animation-iteration-count: 1
+            -moz-animation: error
+            -moz-animation-duration: .5s
+            -moz-animation-iteration-count: 1
 
         #username
             position: absolute
@@ -135,37 +159,45 @@ body
         transform: rotateZ(2deg)
         background-color: white
 
-    #highscore
+    .highscore
         @extend .input-block
-        margin-top: 150px
-        width: 600px
-        height: 900px
+        margin-top: 50px
+        width: 500px
+        height: 700px
         font-weight: bold
         text-align: center
         color: $color-btn
 
         h3
-            font-size: 2.5em
-            text-decoration: underline
+            font-size: 2.4em
+            margin: 40px auto 30px
+            display: block
+            width: 90%
+            border-bottom: solid 2px black
 
         .score
             margin: 20px 10px
 
+            label
+                color: black
+
+            label.position
+                font-size: 1.2em
 
         .position
             float: left
             width: 20%
-            font-size: 2em
+            font-size: 1.5em
 
         .name
             float: left
             width: 40%
-            font-size: 1.5em
+            font-size: 1.2em
 
         .points
             float: left
             width: 40%
-            font-size: 1.5em
+            font-size: 1.2em
 
     #search-overlay
         position: fixed
@@ -191,3 +223,17 @@ body
             max-width: 200px
             display: block
             margin: 20px auto 0
+
+    @-webkit-keyframes error
+        0%
+            transform: rotateZ(0deg)
+        20%
+            transform: rotateZ(-2deg)
+        40%
+            transform: rotateZ(2deg)
+        60%
+            transform: rotateZ(-2deg)
+        80%
+            transform: rotateZ(2deg)
+        100%
+            transform: rotateZ(0deg)
