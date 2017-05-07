@@ -26,16 +26,15 @@ body {
       -moz-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75); }
   body .letters {
-    max-width: 740px;
-    margin: 150px auto 100px; }
+    display: flex;
+    justify-content: center;
+    margin: 150px 10px 100px; }
     body .letters.small {
-      margin: 50px auto;
-      width: 575px; }
+      margin: 50px auto; }
 @media(max-width: 905px) {
   body .letters {
     padding: 0 50px; } }
   body .letter, body .letter-1, body .letter-2, body .letter-3 {
-    float: left;
     width: 80px;
     height: 80px;
     font-size: 5em;
@@ -52,6 +51,8 @@ body {
     body .letter.invert, body .invert.letter-1, body .invert.letter-2, body .invert.letter-3 {
       background-color: black;
       color: white;
+      page-break-after: always;
+      break-after: always;
       -webkit-box-shadow: 5px 5px 0px 0px white;
       -moz-box-shadow: 5px 5px 0px 0px white;
       box-shadow: 5px 5px 0px 0px white; }

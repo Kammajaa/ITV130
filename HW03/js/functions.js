@@ -33,6 +33,8 @@ $(function() {
             return;
         }
 
+
+        $("#username").text("Username");
         $("#new-game").hide();
         $("#search-overlay").show();
     });

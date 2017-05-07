@@ -36,18 +36,17 @@ body
             box-shadow: 2px 2px 15px 0px $shadow-color
 
     .letters
-        max-width: 740px
-        margin: 150px auto 100px
+        display: flex
+        justify-content: center
+        margin: 150px 10px 100px
 
         &.small
             margin: 50px auto
-            width: 575px
 
         @media(max-width: 905px)
             padding: 0 50px
 
     .letter
-        float: left
         width: 80px
         height: 80px
         font-size: 5em
@@ -62,9 +61,12 @@ body
             height: 50px
             width: 50px
             font-size: 3em
+
         &.invert
             background-color: black
             color: white
+            page-break-after: always
+            break-after: always
             -webkit-box-shadow: 5px 5px 0px 0px white
             -moz-box-shadow: 5px 5px 0px 0px white
             box-shadow: 5px 5px 0px 0px white
