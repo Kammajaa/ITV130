@@ -30,7 +30,7 @@ body {
     margin: 150px auto 100px; }
     body .letters.small {
       margin: 50px auto;
-      width: 500px; }
+      width: 575px; }
 @media(max-width: 905px) {
   body .letters {
     padding: 0 50px; } }
@@ -49,6 +49,12 @@ body {
       height: 50px;
       width: 50px;
       font-size: 3em; }
+    body .letter.invert, body .invert.letter-1, body .invert.letter-2, body .invert.letter-3 {
+      background-color: black;
+      color: white;
+      -webkit-box-shadow: 5px 5px 0px 0px white;
+      -moz-box-shadow: 5px 5px 0px 0px white;
+      box-shadow: 5px 5px 0px 0px white; }
   body .letter-1 {
     margin: 5px 5px 5px -10px;
     transform: rotateZ(7deg); }
@@ -127,19 +133,14 @@ body {
   body .highscore {
     margin-top: 50px;
     width: 500px;
-    height: 700px;
+    height: 640px;
     font-weight: bold;
     text-align: center;
     color: #F50057; }
-    body .highscore h3 {
-      font-size: 2.4em;
-      margin: 40px auto 30px;
-      display: block;
-      width: 90%;
-      border-bottom: solid 2px black; }
     body .highscore .score {
       margin: 20px 10px; }
       body .highscore .score label {
+        margin: 30px 0;
         color: black; }
       body .highscore .score label.position {
         font-size: 1.2em; }
@@ -155,26 +156,14 @@ body {
       float: left;
       width: 40%;
       font-size: 1.2em; }
-  body #search-overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-    body #search-overlay h3 {
-      color: balck;
-      display: block;
-      text-align: center;
-      text-text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
-      max-width: 700px;
-      margin: 100px auto 10px;
-      font-size: 2em;
-      font-weight: bold; }
-    body #search-overlay img {
-      border-radius: 50%;
-      max-width: 200px;
-      display: block;
-      margin: 20px auto 0; }
+  body .search-overlay {
+    width: 400px;
+    height: 450px;
+    margin: 100px auto;
+    background-color: black;
+    transform: rotateZ(-2deg); }
+    body .search-overlay img {
+      width: 100%; }
 @-webkit-keyframes error {
   0% {
     transform: rotateZ(0deg); }

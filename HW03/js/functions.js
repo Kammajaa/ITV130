@@ -33,10 +33,12 @@ $(function() {
             return;
         }
 
-        $("#search-overlay").fadeIn();
+        $("#new-game").hide();
+        $("#search-overlay").show();
     });
 
     $("#cancel").click(function() {
-        $("#search-overlay").fadeOut();
+        $("#search-overlay").hide();
+        $("#new-game").show();
     });
 });

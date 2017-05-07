@@ -41,7 +41,7 @@ body
 
         &.small
             margin: 50px auto
-            width: 500px
+            width: 575px
 
         @media(max-width: 905px)
             padding: 0 50px
@@ -62,6 +62,12 @@ body
             height: 50px
             width: 50px
             font-size: 3em
+        &.invert
+            background-color: black
+            color: white
+            -webkit-box-shadow: 5px 5px 0px 0px white
+            -moz-box-shadow: 5px 5px 0px 0px white
+            box-shadow: 5px 5px 0px 0px white
 
     .letter-1
         @extend .letter
@@ -163,22 +169,16 @@ body
         @extend .input-block
         margin-top: 50px
         width: 500px
-        height: 700px
+        height: 640px
         font-weight: bold
         text-align: center
         color: $color-btn
-
-        h3
-            font-size: 2.4em
-            margin: 40px auto 30px
-            display: block
-            width: 90%
-            border-bottom: solid 2px black
 
         .score
             margin: 20px 10px
 
             label
+                margin: 30px 0
                 color: black
 
             label.position
@@ -199,30 +199,15 @@ body
             width: 40%
             font-size: 1.2em
 
-    #search-overlay
-        position: fixed
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-
-        h3
-            color: balck
-            display: block
-            text:
-                align: center
-                text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15)
-            max-width: 700px
-            margin: 100px auto 10px
-            font:
-                size: 2em
-                weight: bold
+    .search-overlay
+        width: 400px
+        height: 450px
+        margin: 100px auto
+        background-color: black
+        transform: rotateZ(-2deg)
 
         img
-            border-radius: 50%
-            max-width: 200px
-            display: block
-            margin: 20px auto 0
+            width: 100%
 
     @-webkit-keyframes error
         0%
