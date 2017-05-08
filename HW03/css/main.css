@@ -152,6 +152,10 @@ body {
     margin-left: 1%;
     transform: rotateZ(2deg);
     background-color: white; }
+  body #game #submit {
+    position: absolute;
+    top: 100px;
+    right: 10px; }
   body #game .input-block, body #game .highscore {
     height: 100px;
     width: 700px;
@@ -161,18 +165,6 @@ body {
     max-width: 600px;
     display: flex;
     margin: 20px; }
-    body #game .input-wraper #submit {
-      border: none;
-      background-color: #F50057;
-      color: white;
-      cursor: pointer;
-      transition: -webkit-box-shadow 0.2s ease-in-out, -moz-box-shadow 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-      font-size: 1.5em;
-      font-weight: bold; }
-      body #game .input-wraper #submit:hover {
-        -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75); }
     body #game .input-wraper .placeholder {
       transition: font-size 0.2s ease-in-out, top 0.2s ease-in-out;
       position: absolute;
