@@ -1,7 +1,34 @@
 #game
+    .letters(style="margin: 150px auto 0;")
+        .letter-1.tiny Y
+        .letter-2.tiny O
+        .letter-3.tiny U
+        .letter-1.tiny R
+        .letter-2.tiny 
+        .letter-3.tiny W
+        .letter-1.tiny O
+        .letter-2.tiny R
+        .letter-3.tiny D
+        .letter-1.tiny 
+        .letter-2.tiny I
+        .letter-3.tiny S
+    
+    .letters(style="margin: 10px auto;")
+        .letter-1.invert P
+        .letter-2.small O
+        .letter-3.small G
+        .letter-1.small O
+        .letter-2.small N
+        .letter-3.small O
+        .letter-1.small P
+        .letter-2.small H
+        .letter-3.small O
+        .letter-1.small B
+        .letter-2.small I
+        .letter-3.small A
+
     .input-block
         .background
-            .input-wraper
-                span#username Username
-                input#input-username(type="text" maxlength="21")
-            button#start Find opponent
+            .input-wraper.active
+                input#input-word.input(placeholder="Type here" type="text" maxlength="21")
+                button#submit Submit

@@ -6,7 +6,7 @@ body {
   background: linear-gradient(top right, orange, #ff9d2a); }
   body .clear {
     clear: both; }
-  body button {
+  body .btn {
     cursor: pointer;
     width: 200px;
     height: 50px;
@@ -21,15 +21,24 @@ body {
     -webkit-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.75); }
-    body button:hover {
+    body .btn:hover {
       -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.75); }
+  body .logo {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    left: 20px; }
   body .letters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin: 150px 10px 100px; }
     body .letters.small {
+      max-width: 590px;
       margin: 50px auto; }
 @media(max-width: 905px) {
   body .letters {
@@ -39,6 +48,8 @@ body {
     height: 80px;
     font-size: 5em;
     padding: 10px;
+    vertical-align: text-top;
+    text-align: left;
     border: solid 1px black;
     background-color: white;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
@@ -48,23 +59,32 @@ body {
       height: 50px;
       width: 50px;
       font-size: 3em; }
+    body .letter.tiny, body .tiny.letter-1, body .tiny.letter-2, body .tiny.letter-3 {
+      padding: 5px;
+      height: 15px;
+      width: 15px;
+      font-size: 1em; }
     body .letter.invert, body .invert.letter-1, body .invert.letter-2, body .invert.letter-3 {
       background-color: black;
       color: white;
-      page-break-after: always;
-      break-after: always;
       -webkit-box-shadow: 5px 5px 0px 0px white;
       -moz-box-shadow: 5px 5px 0px 0px white;
       box-shadow: 5px 5px 0px 0px white; }
   body .letter-1 {
     margin: 5px 5px 5px -10px;
     transform: rotateZ(7deg); }
+    body .letter-1.tiny {
+      margin: 5px 5px 5px -10px; }
   body .letter-2 {
     margin: 5px -15px;
     transform: rotateZ(-12deg); }
+    body .letter-2.tiny {
+      margin: 10px 5px 5px -10px; }
   body .letter-3 {
     margin: 5px;
     transform: rotateZ(-2deg); }
+    body .letter-3.tiny {
+      margin: 0px 5px 5px -10px; }
   body #username-diaply {
     display: block;
     font-size: 1.5em;
@@ -112,7 +132,8 @@ body {
       font-weight: bold;
       color: #F50057;
       opacity: 0.8; }
-    body .input-wraper #input-username {
+    body .input-wraper .input {
+      text-transform: uppercase;
       width: 100%;
       padding: 10px 20px;
       display: block;
@@ -122,7 +143,7 @@ body {
       color: black;
       font-size: 1.5em;
       font-weight: bold; }
-      body .input-wraper #input-username:focus {
+      body .input-wraper .input:focus {
         outline: none; }
   body .background {
     position: absolute;
@@ -131,6 +152,12 @@ body {
     margin-left: 1%;
     transform: rotateZ(2deg);
     background-color: white; }
+  body #game .input-block, body #game .highscore {
+    height: 150px;
+    width: 700px;
+    margin: 100px auto; }
+  body #game .input-wraper {
+    margin: 60px 10px 10px; }
   body .highscore {
     margin-top: 50px;
     width: 500px;
