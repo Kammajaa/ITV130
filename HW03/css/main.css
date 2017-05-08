@@ -153,11 +153,38 @@ body {
     transform: rotateZ(2deg);
     background-color: white; }
   body #game .input-block, body #game .highscore {
-    height: 150px;
+    height: 100px;
     width: 700px;
     margin: 100px auto; }
   body #game .input-wraper {
-    margin: 60px 10px 10px; }
+    position: relative;
+    max-width: 600px;
+    display: flex;
+    margin: 20px; }
+    body #game .input-wraper #submit {
+      border: none;
+      background-color: #F50057;
+      color: white;
+      cursor: pointer;
+      transition: -webkit-box-shadow 0.2s ease-in-out, -moz-box-shadow 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      font-size: 1.5em;
+      font-weight: bold; }
+      body #game .input-wraper #submit:hover {
+        -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75); }
+    body #game .input-wraper .placeholder {
+      transition: font-size 0.2s ease-in-out, top 0.2s ease-in-out;
+      position: absolute;
+      color: #F50057;
+      top: 15px;
+      left: 10px;
+      font-size: 2em;
+      font-weight: bold; }
+    body #game .input-wraper.active .placeholder {
+      top: -7px;
+      left: 5px;
+      font-size: 0.8em; }
   body .highscore {
     margin-top: 50px;
     width: 500px;
