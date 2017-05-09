@@ -3,21 +3,11 @@ html
     include templates/head
     
     body
-
-        .logo
-            .letter-1.tiny T
-            .letter-2.tiny Y
-            .letter-3.tiny P
-            .letter-1.tiny O
-            .letter-2.tiny N
-            .letter-3.tiny A
-            .letter-1.tiny U
-            .letter-2.tiny T
-
-        button#score.btn Scores
         include templates/new-game
         include templates/search
         include templates/highscore
         include templates/game
+        include templates/countdown
+        include templates/solution
 
-        script(src="js/functions.js")
+    script(src="js/functions.js")

@@ -15,6 +15,7 @@ body
 
     .btn
         cursor: pointer
+        margin: 10px auto
         width: 200px
         height: 50px
         color: white
@@ -22,7 +23,6 @@ body
         border: none
         border-radius: 2px
         display: block
-        margin: 10px auto
         font:
             size: 1.2em
             weight: bold
@@ -68,6 +68,11 @@ body
         -webkit-box-shadow: 5px 5px 0px 0px $shadow-color
         -moz-box-shadow: 5px 5px 0px 0px $shadow-color
         box-shadow: 5px 5px 0px 0px $shadow-color
+
+        &.go
+            height: 70px
+            width: 100px
+            padding: 10px 10px 20px
 
         &.small
             height: 50px
@@ -118,7 +123,7 @@ body
             weight: bold
         color: $color-btn
 
-    #score
+    .score-btn
         position: absolute
         right: 50px
         top: 20px
@@ -151,7 +156,7 @@ body
         #username
             position: absolute
             pointer-events: none
-            margin: 25px 0 0 10px
+            margin: 20px 0 0 10px
             font:
                 size: 1.5em
                 weight: bold
@@ -263,7 +268,7 @@ body
 
     .search-overlay
         width: 400px
-        height: 450px
+        height: 440px
         margin: 100px auto
         background-color: black
         transform: rotateZ(-2deg)

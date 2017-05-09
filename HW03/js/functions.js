@@ -1,6 +1,25 @@
 $(function() {
     var username = "";
 
+    function startCountdown() {
+        setTimeout(function() {
+            $("#timer").find(".invert").removeClass("invert");
+            $("#timer").find(".small").addClass("invert");
+        }, 1000);
+        setTimeout(function() {
+            $("#timer").find(".invert").removeClass("invert");
+            $("#timer").find(".tiny").addClass("invert");
+        }, 2000);
+        setTimeout(function() {
+            $("#timer").find(".invert").removeClass("invert");
+            $("#timer").find(".go").addClass("invert");
+        }, 3000);
+        setTimeout(function() {
+            $("#countdown").hide();
+            $("#game").show();
+        }, 3500);
+    }
+
     $("#input-username").focusin(function() {
         $(this).parent().addClass("active");
     });
@@ -11,7 +30,7 @@ $(function() {
         }
     });
 
-    $("#score").click(function() {
+    $(".score-btn").click(function() {
         if ($("#highscore").is(':visible')) {
             $("#highscore").hide();
             $("#new-game").show();
@@ -29,16 +48,23 @@ $(function() {
                     $("#start").parent().find(".input-wraper").removeClass("error");
                 }, 500);
             }
-
             return;
         }
 
+        username = $("#input-username").val();
+
         $("#username").text("Username");
         $("#new-game").hide();
-        console.log("Töötab");
         $("#search-overlay").show();
+
         $("#gameMenuBackgroundSound").prop("muted", true);
         $("#searchOpponentSound").prop("muted", false);
+
+        setTimeout(function() {
+            $("#search-overlay").hide();
+            $("#countdown").show();
+            startCountdown();
+        }, 1000);
     });
 
     $("#cancel").click(function() {
