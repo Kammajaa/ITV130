@@ -37,6 +37,25 @@ $(function() {
         }
     }
 
+    function displayNewWord() {
+        $("#game-word").html("");
+
+        var counter = 1;
+
+        for (var i = 0; i < currentWord.length; i++) {
+            $("#game-word").append("<div class='letter-" + counter + " small'>" + currentWord[i] + "</div>");
+            if(counter == 3) {
+                counter = 1;
+            } else {
+                counter++;
+            }
+        }
+
+        $("#game-word").find(".small").first().removeClass("small").addClass("invert");
+    }
+
+    displayNewWord();
+
     $("#input-word").keypress(function (e) {
         if (e.which == 13)  {
             checkWord($(this).val());

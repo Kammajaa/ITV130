@@ -17,6 +17,10 @@ var SCREEN_WIDTH = window.innerWidth,
 var launchInterval = "";
 var loopInterval = "";
 
+function clearCanvas() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 function startFireworks() {
     launchInterval = setInterval(launch, 800);
     loopInterval = setInterval(loop, 1000 / 50);
@@ -25,6 +29,7 @@ function startFireworks() {
 function stopFireworks() {
     clearInterval(launchInterval);
     clearInterval(loopInterval);
+    clearCanvas();
 }
 
 $(document).ready(function() {
