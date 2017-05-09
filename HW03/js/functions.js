@@ -155,7 +155,6 @@ $(function() {
         $('#time-1').text(data.time + 'ms');
         $('#time-2').text('Still writing...');
         $("#result").show();
-        document.getElementById("winSound").play();
 
     });
 
@@ -170,6 +169,7 @@ $(function() {
             $('#name-2').text(data.opponentName);
             $('#time-1').text(data.youTime + 'ms');
             $('#time-2').text(data.opponentTime + 'ms');
+            document.getElementById("winSound").play();
         } else {
             $('#win_message').hide();
             $('#loss_message').show();
