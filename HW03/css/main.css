@@ -58,7 +58,7 @@ body {
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75); }
     body .letter.go, body .go.letter-1, body .go.letter-2, body .go.letter-3 {
       height: 70px;
-      width: 100px;
+      width: 125px;
       padding: 10px 10px 20px; }
     body .letter.small, body .small.letter-1, body .small.letter-2, body .small.letter-3 {
       height: 50px;
