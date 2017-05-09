@@ -1,8 +1,19 @@
 $(function() {
+    var sessionId = -1;
     var username = "";
     var currentWord = "pogonophobia";
     var startTime = "";
     var endTime = "";
+    var socket = io("http://typonaut.tk");
+
+    socket.on('onconnected', function(data) {
+        sessionId = data.id;
+        console.log(sessionId);
+    });
+
+    socket.on("start-word", function(data) {
+        alert(data.word);
+    });
 
     function startCountdown() {
         setTimeout(function() {
@@ -75,6 +86,9 @@ $(function() {
     });
 
     $("#start").click(function() {
+        socket.emit('search', username);
+        return;
+
         if ($("#input-username").val().trim() == "") {
             if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
                 $(this).parent().find(".input-wraper").addClass("error").find("span").text("Username mandatory!");

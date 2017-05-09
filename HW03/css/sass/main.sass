@@ -220,6 +220,7 @@ body
             .placeholder
                 transition: font-size .2s ease-in-out, margin .2s ease-in-out
                 position: absolute
+                pointer-events: none
                 color: $color-btn
                 margin: 10px 0 0 10px
                 font:
@@ -231,6 +232,51 @@ body
                     margin: -10px 0 0 5px
                     font-size: .9em
 
+    .result-block
+        background-color: black
+        margin: 100px auto
+        width: 400px
+        height: 500px
+        transform: rotateZ(-2deg)
+
+        .winner
+            color: green
+            font-size: bold
+            text-transform: uppercase
+
+        .loss
+            color: red
+            font-size: bold
+            text-transform: uppercase
+
+        .result-info
+            margin: 20px 10px 50px
+
+        span.label
+            float: left
+            display: block
+            width: 30%
+            margin: 5px 20px
+            color: $color-btn
+            font-weight: bold
+            font-size: 1em
+
+        span.info
+            margin: 5px 20px
+            float: left
+            display: block
+            width: 30%
+            font-weight: bold
+
+        h2
+            color: $color-btn
+            text-align: center
+            font:
+                size: 2em
+                weight: bold
+
+        h3
+            margin-left: 10px
 
     .highscore
         @extend .input-block

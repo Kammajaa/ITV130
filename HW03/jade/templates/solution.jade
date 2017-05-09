@@ -1,26 +1,44 @@
-#search-overlay(hidden)
-
-    audio#searchOpponentSound(autoplay loop muted)
-        source(src="audio/search-opponent.mp3" type="audio/mpeg")
-
-    .letters.small
-        .letter-1.small L
-        .letter-2.small O
-        .letter-3.small O
-        .letter-1.small K
+#result(hidden)
+    include logo
+    .letters
+        .letter-1.small W
         .letter-2.small I
         .letter-3.small N
-        .letter-1.small G
-        .letter-2.invert 4
-        .letter-3.small O
-        .letter-1.small P
-        .letter-2.small P
-        .letter-3.small O
-        .letter-1.small N
-        .letter-2.small E
-        .letter-3.small N
-        .letter-1.small T
-    .search-overlay
+        .letter-1.small !
+        .letter-2.small !
+        .letter-3.small !
+
+    .letters(style="display: none;")
+        .letter-1.small L
+        .letter-2.small O
+        .letter-3.small S
+        .letter-1.small S
+        .letter-2.small ...
+
+    .result-block
         .background
-            img(src="img/loading.gif" alt="")
-            button#cancel.btn Cancel
+            .result-info
+                h2 Stats
+                h3#name-1 player1 name 
+                    span.winner (WINNER)
+                span.label Time:
+                span.info 500ms
+                .clear
+                span.label Wins:
+                span.info 5
+                .clear
+                span.label Losses:
+                span.info 2
+                .clear
+                h3#name-2 player1 name 
+                    span.loss (loser)
+                span.label Time:
+                span.info 500ms
+                .clear
+                span.label Wins:
+                span.info 5
+                .clear
+                span.label Losses:
+                span.info 2
+                .clear
+            button#again-btn.btn Find opponent
