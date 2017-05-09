@@ -35,11 +35,16 @@ $(function() {
 
         $("#username").text("Username");
         $("#new-game").hide();
+        console.log("Töötab");
         $("#search-overlay").show();
+        $("#gameMenuBackgroundSound").prop("muted", true);
+        $("#searchOpponentSound").prop("muted", false);
     });
 
     $("#cancel").click(function() {
         $("#search-overlay").hide();
         $("#new-game").show();
+        $("#gameMenuBackgroundSound").prop("muted", false);
+        $("#searchOpponentSound").prop("muted", true);
     });
 });
