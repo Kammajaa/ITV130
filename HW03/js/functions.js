@@ -1,19 +1,10 @@
+var socket = io();
+
 $(function() {
-    var sessionId = -1;
     var username = "";
     var currentWord = "pogonophobia";
     var startTime = "";
     var endTime = "";
-    var socket = io("http://typonaut.tk");
-
-    socket.on('onconnected', function(data) {
-        sessionId = data.id;
-        console.log(sessionId);
-    });
-
-    socket.on("start-word", function(data) {
-        alert(data.word);
-    });
 
     function startCountdown() {
         setTimeout(function() {
@@ -31,6 +22,7 @@ $(function() {
         setTimeout(function() {
             $("#countdown").hide();
             $("#game").show();
+            $("#input-word").focus();
         }, 3500);
     }
 
@@ -86,8 +78,6 @@ $(function() {
     });
 
     $("#start").click(function() {
-        socket.emit('search', username);
-        return;
 
         if ($("#input-username").val().trim() == "") {
             if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
@@ -109,11 +99,13 @@ $(function() {
         $("#gameMenuBackgroundSound").prop("muted", true);
         $("#searchOpponentSound").prop("muted", false);
 
-        setTimeout(function() {
-            $("#search-overlay").hide();
-            $("#countdown").show();
-            startCountdown();
-        }, 1000);
+        socket.emit('search', username);
+
+        // setTimeout(function() {
+        //     $("#search-overlay").hide();
+        //     $("#countdown").show();
+        //     startCountdown();
+        // }, 1000);
     });
 
     $("#cancel").click(function() {
@@ -122,4 +114,13 @@ $(function() {
         $("#gameMenuBackgroundSound").prop("muted", false);
         $("#searchOpponentSound").prop("muted", true);
     });
+
+    socket.on('to-game', function(data) {
+        console.log(data);
+
+        $("#search-overlay").hide();
+        $("#countdown").show();
+        startCountdown();
+    });
+
 });
