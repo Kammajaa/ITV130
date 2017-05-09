@@ -1,5 +1,8 @@
 $(function() {
     var username = "";
+    var currentWord = "pogonophobia";
+    var startTime = "";
+    var endTime = "";
 
     function startCountdown() {
         setTimeout(function() {
@@ -19,6 +22,37 @@ $(function() {
             $("#game").show();
         }, 3500);
     }
+
+    function checkWord(word) {
+        if (word.toUpperCase() === currentWord.toUpperCase()) {
+            alert("win");
+        } else {
+            $("#game").find(".input-wraper").addClass("error");
+            setTimeout(function() {
+                $("#game").find(".input-wraper").removeClass("error");
+            }, 500);
+        }
+    }
+
+    $("#input-word").keypress(function (e) {
+        if (e.which == 13)  {
+            checkWord($(this).val());
+        }
+    });
+
+    $("#submit").click(function() {
+        checkWord($("#input-word").val());
+    });
+
+    $("#input-word").focusin(function() {
+        $(this).parent().addClass("active");
+    });
+
+    $("#input-word").focusout(function() {
+        if ($(this).val().trim().length == 0) {
+            $(this).parent().removeClass("active");
+        }
+    });
 
     $("#input-username").focusin(function() {
         $(this).parent().addClass("active");
@@ -48,6 +82,7 @@ $(function() {
                     $("#start").parent().find(".input-wraper").removeClass("error");
                 }, 500);
             }
+
             return;
         }
 

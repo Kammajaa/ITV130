@@ -49,6 +49,7 @@ body {
     font-size: 5em;
     padding: 10px;
     vertical-align: text-top;
+    text-transform: uppercase;
     text-align: left;
     border: solid 1px black;
     background-color: white;
@@ -170,17 +171,15 @@ body {
     display: flex;
     margin: 20px; }
     body #game .input-wraper .placeholder {
-      transition: font-size 0.2s ease-in-out, top 0.2s ease-in-out;
+      transition: font-size 0.2s ease-in-out, margin 0.2s ease-in-out;
       position: absolute;
       color: #F50057;
-      top: 15px;
-      left: 10px;
+      margin: 10px 0 0 10px;
       font-size: 2em;
       font-weight: bold; }
     body #game .input-wraper.active .placeholder {
-      top: -7px;
-      left: 5px;
-      font-size: 0.8em; }
+      margin: -10px 0 0 5px;
+      font-size: 0.9em; }
   body .highscore {
     margin-top: 50px;
     width: 500px;

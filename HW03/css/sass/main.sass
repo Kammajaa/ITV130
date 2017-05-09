@@ -62,7 +62,9 @@ body
         font-size: 5em
         padding: 10px
         vertical-align: text-top
-        text-align: left
+        text:
+            transform: uppercase
+            align: left
         border: solid 1px black
         background-color: white
         -webkit-box-shadow: 5px 5px 0px 0px $shadow-color
@@ -216,20 +218,18 @@ body
             margin: 20px
 
             .placeholder
-                transition: font-size .2s ease-in-out, top .2s ease-in-out
+                transition: font-size .2s ease-in-out, margin .2s ease-in-out
                 position: absolute
                 color: $color-btn
-                top: 15px
-                left: 10px
+                margin: 10px 0 0 10px
                 font:
                     size: 2em
                     weight: bold
 
             &.active
                 .placeholder
-                    top: -7px
-                    left: 5px
-                    font-size: .8em
+                    margin: -10px 0 0 5px
+                    font-size: .9em
 
 
     .highscore
