@@ -4,9 +4,9 @@
     audio#winSound
         source(src="audio/win.mp3" type="audio/mpeg")
     audio#lossSound
-        source(src="audio/loss.mp3" type="audio/mpeg")
+        source(src="audio/loss2.mp3" type="audio/mpeg")
 
-    .letters
+    .letters(style="display: none;")#win_message
         .letter-1.small W
         .letter-2.small I
         .letter-3.small N
@@ -14,7 +14,7 @@
         .letter-2.small !
         .letter-3.small !
 
-    .letters(style="display: none;")
+    .letters(style="display: none;")#loss_message
         .letter-1.small L
         .letter-2.small O
         .letter-3.small S
@@ -25,26 +25,26 @@
         .background
             .result-info
                 h2 Stats
-                h3#name-1 player1 name 
+                h3#name-1
                     span.winner (WINNER)
                 span.label Time:
-                span.info 500ms
+                span.info#time-1
                 .clear
                 span.label Wins:
-                span.info 5
+                span.info#wins-1 5
                 .clear
                 span.label Losses:
-                span.info 2
+                span.info#losses-1 2
                 .clear
-                h3#name-2 player1 name 
+                h3#name-2
                     span.loss (loser)
                 span.label Time:
-                span.info 500ms
+                span.info#time-2
                 .clear
                 span.label Wins:
-                span.info 5
+                span.info#wins-2 5
                 .clear
                 span.label Losses:
-                span.info 2
+                span.info#losses-2 2
                 .clear
             button#again-btn.btn Find opponent
