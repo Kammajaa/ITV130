@@ -22,13 +22,16 @@ $(function() {
         setTimeout(function() {
             $("#countdown").hide();
             $("#game").show();
+            socket.emit('started');
+            $("#timer").find(".invert").removeClass("invert");
+            $("#timer").find(".first_3").addClass("invert");
             $("#input-word").focus();
         }, 3500);
     }
 
     function checkWord(word) {
         if (word.toUpperCase() === currentWord.toUpperCase()) {
-            alert("win");
+            socket.emit('word-change', word);
         } else {
             $("#game").find(".input-wraper").addClass("error");
             setTimeout(function() {
@@ -53,8 +56,6 @@ $(function() {
 
         $("#game-word").find(".small").first().removeClass("small").addClass("invert");
     }
-
-    displayNewWord();
 
     $("#input-word").keypress(function (e) {
         if (e.which == 13)  {
@@ -97,7 +98,6 @@ $(function() {
     });
 
     $("#start").click(function() {
-
         if ($("#input-username").val().trim() == "") {
             if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
                 $(this).parent().find(".input-wraper").addClass("error").find("span").text("Username mandatory!");
@@ -120,6 +120,8 @@ $(function() {
 
         socket.emit('search', username);
 
+
+
         // setTimeout(function() {
         //     $("#search-overlay").hide();
         //     $("#countdown").show();
@@ -141,5 +143,59 @@ $(function() {
         $("#countdown").show();
         startCountdown();
     });
+
+    socket.on('win', function(data) {
+        $("#input-word").val("");
+        console.log(data);
+        $("#game").hide();
+        $('#loss_message').hide();
+        $('#win_message').show();
+        $('#name-1').text(data.youName);
+        $('#name-2').text(data.opponentName);
+        $('#time-1').text(data.time + 'ms');
+        $('#time-2').text('Still writing...');
+        $("#result").show();
+        document.getElementById("winSound").play();
+
+    });
+
+    socket.on('both-end', function(data) {
+        $("#input-word").val("");
+        console.log(data);
+        $("#game").hide();
+        if (data.win) {
+            $('#loss_message').hide();
+            $('#win_message').show();
+            $('#name-1').text(data.youName);
+            $('#name-2').text(data.opponentName);
+            $('#time-1').text(data.youTime + 'ms');
+            $('#time-2').text(data.opponentTime + 'ms');
+        } else {
+            $('#win_message').hide();
+            $('#loss_message').show();
+            $('#name-1').text(data.opponentName);
+            $('#name-2').text(data.youName);
+            $('#time-1').text(data.opponentTime + 'ms');
+            $('#time-2').text(data.youTime + 'ms');
+            document.getElementById("lossSound").play();
+        }
+        $("#result").show();
+
+    });
+
+    // $("#input-word").on("input", function() {
+    //     socket.emit('word-change', $(this).val());
+    // });
+
+    $('#again-btn').click(function() {
+        $("#input-word").val("");
+        $("#result").hide();
+        $("#search-overlay").show();
+
+        $("#gameMenuBackgroundSound").prop("muted", true);
+        $("#searchOpponentSound").prop("muted", false);
+
+        socket.emit('search', username);
+    })
 
 });
