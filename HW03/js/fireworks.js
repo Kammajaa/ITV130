@@ -1,5 +1,5 @@
-var SCREEN_WIDTH = window.innerWidth,
-    SCREEN_HEIGHT = window.innerHeight,
+var SCREEN_WIDTH = window.innerWidth - 50,
+    SCREEN_HEIGHT = window.innerHeight * 2,
     mousePos = {
         x: 400,
         y: 300
@@ -34,7 +34,7 @@ function stopFireworks() {
 
 $(document).ready(function() {
     document.body.appendChild(canvas);
-    $("canvas").attr("style", "position: absolute; top: 0; left: 0; right:0; bottom:0; z-index: -999;");
+    $("canvas").attr("style", "position: fixed; top: 0; left: 0; right:20px; bottom:0; z-index: -999;");
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
 });
