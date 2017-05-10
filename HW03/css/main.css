@@ -184,40 +184,42 @@ body {
   body .result-block {
     background-color: black;
     margin: 100px auto;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 800px;
     transform: rotateZ(-2deg); }
-    body .result-block .winner {
-      color: green;
-      font-size: bold;
-      text-transform: uppercase; }
-    body .result-block .loss {
-      color: red;
-      font-size: bold;
-      text-transform: uppercase; }
     body .result-block .result-info {
       margin: 20px 10px 50px; }
-    body .result-block span.label {
+    body .result-block .label {
       float: left;
       display: block;
-      width: 30%;
+      width: 40%;
       margin: 5px 20px;
       color: #F50057;
       font-weight: bold;
       font-size: 1em; }
-    body .result-block span.info {
+    body .result-block .info {
       margin: 5px 20px;
       float: left;
       display: block;
-      width: 30%;
+      width: 35%;
       font-weight: bold; }
     body .result-block h2 {
       color: #F50057;
       text-align: center;
+      margin: 40px auto 30px;
       font-size: 2em;
       font-weight: bold; }
-    body .result-block h3 {
-      margin-left: 10px; }
+    body .result-block h4 {
+      margin-left: 10px;
+      text-transform: uppercase; }
+      body .result-block h4 .played-word {
+        color: #F50057; }
+    body .result-block .big {
+      font-size: 1.6em; }
+    body .result-block .win {
+      color: green; }
+    body .result-block .loss {
+      color: red; }
   body .highscore {
     margin-top: 50px;
     width: 500px;

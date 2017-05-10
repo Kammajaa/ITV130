@@ -1,5 +1,9 @@
 #game(hidden)
     include logo
+
+    audio#gameSound(autoplay loop muted)
+        source(src="audio/game-sound.mp3" type="audio/mpeg")
+
     .letters(style="margin: 150px auto 0;")
         .letter-1.tiny Y
         .letter-2.tiny O

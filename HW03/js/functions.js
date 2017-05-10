@@ -22,11 +22,36 @@ $(function() {
         setTimeout(function() {
             $("#countdown").hide();
             $("#game").show();
+            $("#gameSound").prop("muted", false);
             socket.emit('started');
             $("#timer").find(".invert").removeClass("invert");
             $("#timer").find(".first_3").addClass("invert");
             $("#input-word").focus();
         }, 3500);
+    }
+
+    function startGame() {
+        if ($("#input-username").val().trim() == "") {
+            if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
+                $("#start").parent().find(".input-wraper").addClass("error").find("span").text("Username mandatory!");
+                setTimeout(function() {
+                    $("#start").parent().find(".input-wraper").removeClass("error");
+                }, 500);
+            }
+
+            return;
+        }
+
+        username = $("#input-username").val();
+
+        $("#username").text("Username");
+        $("#new-game").hide();
+        $("#search-overlay").show();
+
+        $("#gameMenuBackgroundSound").prop("muted", true);
+        $("#searchOpponentSound").prop("muted", false);
+
+        socket.emit('search', username);
     }
 
     function checkWord(word) {
@@ -97,36 +122,14 @@ $(function() {
         }
     });
 
-    $("#start").click(function() {
-        if ($("#input-username").val().trim() == "") {
-            if (!$("#start").parent().find(".input-wraper").hasClass("error")) {
-                $(this).parent().find(".input-wraper").addClass("error").find("span").text("Username mandatory!");
-                setTimeout(function() {
-                    $("#start").parent().find(".input-wraper").removeClass("error");
-                }, 500);
-            }
-
-            return;
+    $("#input-username").keypress(function (e) {
+        if (e.which == 13)  {
+            startGame();
         }
+    });
 
-        username = $("#input-username").val();
-
-        $("#username").text("Username");
-        $("#new-game").hide();
-        $("#search-overlay").show();
-
-        $("#gameMenuBackgroundSound").prop("muted", true);
-        $("#searchOpponentSound").prop("muted", false);
-
-        socket.emit('search', username);
-
-
-
-        // setTimeout(function() {
-        //     $("#search-overlay").hide();
-        //     $("#countdown").show();
-        //     startCountdown();
-        // }, 1000);
+    $("#start").click(function() {
+        startGame();
     });
 
     $("#cancel").click(function() {
@@ -134,13 +137,16 @@ $(function() {
         $("#new-game").show();
         $("#gameMenuBackgroundSound").prop("muted", false);
         $("#searchOpponentSound").prop("muted", true);
+        socket.emit('cancel-search');
     });
 
     socket.on('to-game', function(data) {
         console.log(data);
-
+        currentWord = data.word;
+        displayNewWord();
         $("#search-overlay").hide();
         $("#countdown").show();
+        document.getElementById("countdownSound").play();
         $("#searchOpponentSound").prop("muted", true);
         startCountdown();
     });
@@ -148,13 +154,18 @@ $(function() {
     socket.on('win', function(data) {
         $("#input-word").val("");
         console.log(data);
+        $("#gameSound").prop("muted", true);
         $("#game").hide();
         $('#loss_message').hide();
         $('#win_message').show();
         $('#name-1').text(data.youName);
         $('#name-2').text(data.opponentName);
         $('#time-1').text(data.time + 'ms');
-        $('#time-2').text('Still writing...');
+        $('#time-2').text('Still typing...');
+        $('#wins-1').text(data.youWins);
+        $('#wins-2').text(data.opponentWins);
+        $('#losses-1').text(data.youLosses);
+        $('#losses-2').text(data.opponentLosses);
         $("#result").show();
         if (data.win) {document.getElementById("winSound").play();}
     });
@@ -170,13 +181,22 @@ $(function() {
             $('#name-2').text(data.opponentName);
             $('#time-1').text(data.youTime + 'ms');
             $('#time-2').text(data.opponentTime + 'ms');
+            $('#wins-1').text(data.youWins);
+            $('#wins-2').text(data.opponentWins);
+            $('#losses-1').text(data.youLosses);
+            $('#losses-2').text(data.opponentLosses);
         } else {
             $('#win_message').hide();
             $('#loss_message').show();
+            $("#gameSound").prop("muted", true);
             $('#name-1').text(data.opponentName);
             $('#name-2').text(data.youName);
             $('#time-1').text(data.opponentTime + 'ms');
             $('#time-2').text(data.youTime + 'ms');
+            $('#wins-1').text(data.opponentWins);
+            $('#wins-2').text(data.youWins);
+            $('#losses-1').text(data.opponentLosses);
+            $('#losses-2').text(data.youLosses);
             document.getElementById("lossSound").play();
         }
         $("#result").show();

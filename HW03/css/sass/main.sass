@@ -235,48 +235,52 @@ body
     .result-block
         background-color: black
         margin: 100px auto
-        width: 400px
-        height: 500px
+        width: 500px
+        height: 800px
         transform: rotateZ(-2deg)
-
-        .winner
-            color: green
-            font-size: bold
-            text-transform: uppercase
-
-        .loss
-            color: red
-            font-size: bold
-            text-transform: uppercase
 
         .result-info
             margin: 20px 10px 50px
 
-        span.label
+        .label
             float: left
             display: block
-            width: 30%
+            width: 40%
             margin: 5px 20px
             color: $color-btn
             font-weight: bold
             font-size: 1em
 
-        span.info
+        .info
             margin: 5px 20px
             float: left
             display: block
-            width: 30%
+            width: 35%
             font-weight: bold
 
         h2
             color: $color-btn
             text-align: center
+            margin: 40px auto 30px
             font:
                 size: 2em
                 weight: bold
 
-        h3
+        h4
             margin-left: 10px
+            text-transform: uppercase
+
+            .played-word
+                color: $color-btn
+
+        .big
+            font-size: 1.6em
+
+        .win
+            color: green
+
+        .loss
+            color: red
 
     .highscore
         @extend .input-block

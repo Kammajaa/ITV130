@@ -1,4 +1,7 @@
 #countdown(hidden)
+    audio#countdownSound
+        source(src="audio/321.mp3" type="audio/mpeg")
+
     .letters
         .letter-1.small M
         .letter-2.small A
@@ -12,7 +15,7 @@
         .letter-1.small N
         .letter-2.small D
     #timer.letters.small
-        .letter-1.invert 3
+        .letter-1.invert.first_3 3
         .letter-2.small 2
         .letter-3.tiny 1
         .letter-1.go Go
